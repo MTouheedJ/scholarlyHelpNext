@@ -191,6 +191,19 @@ const Hero: FC<HeroProps> = ({ content }) => {
                   dangerouslySetInnerHTML={{ __html: content.description }}
                 ></div>
               </div>
+              {currentPage === "/take-my-class/" && (
+                <div className="mb-3">
+                  <p className="font-bold">
+                    100% Money-Back Guarantee:{" "}
+                    <span className="font-normal">
+                      Not satisfied with your grades?
+                    </span>
+                    <br />
+                    Get a full refund—
+                    <span className="font-normal">no questions asked.</span>
+                  </p>
+                </div>
+              )}
               <div className="flex justify-center md:justify-start">
                 {!freeQuoteForm ? (
                   <Step4 />

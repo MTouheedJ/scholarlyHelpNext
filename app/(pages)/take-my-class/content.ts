@@ -15,10 +15,10 @@ export const content = {
   btnText: "Take my online class",
   heroContent: {
     heading1: "",
-    mainHeading: `Pay Someone to Do\nMy Online Class:\nLet's Get You That A!`,
+    mainHeading: `Guaranteed Grades in Your Online Classes `,
     heading2: "",
     description:
-      "Pay us to handle your coursework, assignments, and discussions. Ace your classes stress-free with our online class help services.",
+      "We take care of your Full Classes, Exams, Assignments, and Discussions so you can focus on what matters most to you.",
   },
   academic: {
     mainheading: "Why Choose Us? Do My Online Class with Confidence!",

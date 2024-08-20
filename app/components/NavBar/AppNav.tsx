@@ -336,7 +336,16 @@ const AppNav: FC<AppNavProps> = ({}) => {
         <div>
           <Logo />
         </div>
-        {currentPage !== "/take-my-class/" && (
+        {currentPage === "/take-my-class/" ? (
+          <a href="javascript:void(Tawk_API.toggle())">
+            <Button
+              type="submit"
+              className="md:w-[120px] w-[100px] h-10 flex justify-center text-sm"
+            >
+              Live Chat
+            </Button>
+          </a>
+        ) : (
           <div className="md:text-lg text-sm text-primary-400 mr-2">
             <a
               href={`tel:${process.env.NEXT_PUBLIC_COMPANY_PHONE_NUMBER}`}
