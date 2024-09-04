@@ -20,8 +20,9 @@ import SamplesHeroImg from "@/app/assets/Images/samplesHeroImg.webp";
 // import Step4 from "@/app/(pages)/do-my-class/component/Step4";
 import PopUpModal from "../PopUpModal/PopUpModal";
 import ContactForm from "../Form/ContactForm";
-import { formFreeQuote } from "../HideLinks/HideLinks";
+import { phoneEmailMsgForm, formFreeQuote } from "../HideLinks/HideLinks";
 import Step4 from "../FreeQuoteForm/Step4";
+import PhoneEmailMsgFrom from "../FreeQuoteForm/PhoneEmailMsgForm";
 
 type Content = {
   heading1?: string;
@@ -39,6 +40,7 @@ const Hero: FC<HeroProps> = ({ content }) => {
   const currentPage = usePathname();
 
   const freeQuoteForm = formFreeQuote.includes(currentPage);
+  const freeQuotephoneEmailMsg = phoneEmailMsgForm.includes(currentPage);
 
   const handleModel = () => {
     setOpenModal(true);
@@ -191,9 +193,9 @@ const Hero: FC<HeroProps> = ({ content }) => {
                   dangerouslySetInnerHTML={{ __html: content.description }}
                 ></div>
               </div>
-              {currentPage === "/take-my-class/" && (
+              {/* {currentPage === "/take-my-class/" && (
                 <div className="mb-3">
-                  <p className="font-bold">
+                  <p className="font-bold md:text-lg">
                     100% Money-Back Guarantee:{" "}
                     <span className="font-normal">
                       Not satisfied with your grades?
@@ -203,22 +205,28 @@ const Hero: FC<HeroProps> = ({ content }) => {
                     <span className="font-normal">no questions asked.</span>
                   </p>
                 </div>
-              )}
+              )} */}
               <div className="flex justify-center md:justify-start">
-                {!freeQuoteForm ? (
-                  <Step4 />
+                {freeQuotephoneEmailMsg ? (
+                  <PhoneEmailMsgFrom />
                 ) : (
-                  <a href="javascript:void(Tawk_API.toggle())">
-                    <Button
-                      type="submit"
-                      className="md:w-[240px] w-[180px] flex justify-evenly md:px-16 px-10"
-                    >
-                      <span className="w-5">
-                        <ChatBubbles />
-                      </span>
-                      Live Chat
-                    </Button>
-                  </a>
+                  <>
+                    {!freeQuoteForm ? (
+                      <Step4 />
+                    ) : (
+                      <a href="javascript:void(Tawk_API.toggle())">
+                        <Button
+                          type="submit"
+                          className="md:w-[240px] w-[180px] flex justify-evenly md:px-16 px-10"
+                        >
+                          <span className="w-5">
+                            <ChatBubbles />
+                          </span>
+                          Live Chat
+                        </Button>
+                      </a>
+                    )}
+                  </>
                 )}
                 {/* <Button
                   className="md:w-[240px] w-[180px] flex justify-evenly md:px-16 px-10"

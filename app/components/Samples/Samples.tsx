@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
 import SampleBg from "@/app/assets/Images/sampleBg.webp";
 import { sampleCardContent } from "./content";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 // type Content = {
 //   icon?: any;
 //   title?: string;
@@ -25,6 +27,7 @@ interface SamplesProps {
 const Samples: FC<SamplesProps> = ({ btnText }) => {
   const { breakpoint } = useBreakpoint();
   const isDesktop = breakpoint === "lg" || breakpoint === "xl";
+  const currentPage = usePathname();
   const settings = {
     infinite: true,
     speed: 500,
@@ -89,12 +92,21 @@ const Samples: FC<SamplesProps> = ({ btnText }) => {
           </Slider>
         </div>
         <div className="flex justify-center mt-8">
-          <a href="javascript:void(Tawk_API.toggle())">
-            <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
-              {/* Place an Order Now */}
-              {btnText ? `${btnText}` : "Place an Order Now"}
-            </Button>
-          </a>
+          {currentPage === "/take-my-class/" ? (
+            <Link href="#PhoneEmailMsgForm">
+              <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+                {/* Place an Order Now */}
+                {btnText ? `${btnText}` : "Place an Order Now"}
+              </Button>
+            </Link>
+          ) : (
+            <Link href="javascript:void(Tawk_API.toggle())">
+              <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+                {/* Place an Order Now */}
+                {btnText ? `${btnText}` : "Place an Order Now"}
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

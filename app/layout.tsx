@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { hideTalktoModule } from "./components/HideLinks/HideLinks";
 import Schemas from "./faqSchemaContent.json";
 import AuthProvider from "./(pages)/scan/contexts/Auth/Auth";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -75,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         strategy="afterInteractive"
         src={`https://connect.facebook.net/en_US/fbevents.js`}
       />
-      <Script id="facebook-script">
+      {/* <Script id="facebook-script">
         {`
           !function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
@@ -99,17 +99,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           fbq('init', '743102530912070');
           fbq('track', 'PageView');
         `}
-      </Script>
+      </Script> */}
 
       <body className={poppins.className}>
-        <noscript>
+        {/* <noscript>
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=743102530912070&ev=PageView&noscript=1"
           />
-        </noscript>
+        </noscript> */}
         {children}
         <Script
           id="schema-org-main"

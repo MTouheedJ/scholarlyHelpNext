@@ -4,6 +4,8 @@ import { FC, useEffect, useState } from "react";
 import ScheduleIcon from "@/app/assets/Images/schedule-icon.webp";
 import Image from "next/image";
 import Button from "../Button/Button";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Content = {
   title?: string;
@@ -16,7 +18,7 @@ interface ProcessProps {
 }
 const Process: FC<ProcessProps> = ({ content }) => {
   const [activeProcessIndex, setActiveProcessIndex] = useState(0);
-
+  const currentPage = usePathname();
   useEffect(() => {
     let interval = setInterval(() => {
       setActiveProcessIndex((prev) =>
@@ -59,11 +61,24 @@ const Process: FC<ProcessProps> = ({ content }) => {
                       <p>{item.description}</p>
                     </div>
                     <div className="mt-8 md:block flex justify-center ">
-                      <a href="javascript:void(Tawk_API.toggle())">
+                      {currentPage === "/take-my-class/" ? (
+                        <Link href="#PhoneEmailMsgForm">
+                          <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+                            Place an Order Now
+                          </Button>
+                        </Link>
+                      ) : (
+                        <a href="javascript:void(Tawk_API.toggle())">
+                          <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+                            Place an Order Now
+                          </Button>
+                        </a>
+                      )}
+                      {/* <a href="javascript:void(Tawk_API.toggle())">
                         <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
                           Place an Order Now
                         </Button>
-                      </a>
+                      </a> */}
                     </div>
                     {/* <div>
                       <a

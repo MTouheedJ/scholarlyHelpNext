@@ -13,6 +13,7 @@ import Faq from "@/app/components/Faq/Faq";
 import MainLayout from "@/app/MainLayout";
 import Subjects from "@/app/components/Subjects/Subjects";
 import dynamic from "next/dynamic";
+import ContactSection from "@/app/components/Form/ContactSection";
 
 const WhyScholarly = dynamic(
   () => import("@/app/components/WhyScholarly/WhyScholarly"),
@@ -43,6 +44,7 @@ const Page: FC<PageProps> = ({}) => {
       <Process content={processContent} />
       <Samples btnText={content.btnText} />
       <CustomerReviews btnText={content.btnText} />
+      <ContactSection />
       <Subjects
         btnText={content.btnText}
         mainHeading={content.subjects.mainHeading}
@@ -56,8 +58,7 @@ export default Page;
 
 export function generateMetadata({}) {
   return {
-    title:
-      "Pay Someone To Do My Online Class - Take My Online Class For Me - Scholarly Help",
+    title: "FB Online Class Help",
     description:
       "Need online class help? Willing to hire someone to take my online class? We heard you! Let us help you get the grade you want. Instead, you pay someone, pay us to do your online class.",
   };

@@ -5,6 +5,7 @@ import ScheduleIcon from "@/app/assets/Images/schedule-icon.webp";
 import Image from "next/image";
 import Button from "../Button/Button";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type Content = {
   icon?: any;
@@ -72,12 +73,21 @@ const AcademicPartner: FC<AcademicPartnerProps> = ({
           ))}
         </div>
         <div className="flex justify-center mt-8">
-          <a href="javascript:void(Tawk_API.toggle())">
-            <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
-              {/* Place an Order Now */}
-              {btnText ? `${btnText}` : "Place an Order Now"}
-            </Button>
-          </a>
+          {currentPage === "/take-my-class/" ? (
+            <Link href="#PhoneEmailMsgForm">
+              <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+                {/* Place an Order Now */}
+                {btnText ? `${btnText}` : "Place an Order Now"}
+              </Button>
+            </Link>
+          ) : (
+            <Link href="javascript:void(Tawk_API.toggle())">
+              <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+                {/* Place an Order Now */}
+                {btnText ? `${btnText}` : "Place an Order Now"}
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

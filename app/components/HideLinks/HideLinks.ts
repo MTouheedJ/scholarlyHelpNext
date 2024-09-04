@@ -23,7 +23,7 @@ export const hideWhatsappModule = [
   "/pay-for-someone-to-write-my-paper/",
 ];
 // export const hideTalktoModule = ["/pay-for-someone-to-write-my-paper/"];
-export const hideTalktoModule = [""];
+export const hideTalktoModule = ["/take-my-class/"];
 export const withChatNow = ["/do-my-class/,/take-my-class/"];
 
 export const wholeFromFreeQuote = [
@@ -36,9 +36,13 @@ export const wholeFromFreeQuote = [
   "",
 ];
 
-export const emailFormFreeQuote = ["/take-my-class/"];
+export const emailFormFreeQuote = [
+  // "/take-my-class/"
+  "",
+];
 export const formFreeQuote = [
-  "/take-my-class/",
+  "",
+  // "/take-my-class/",
   // "/take-my-exam/",
   // "/do-my-exam/",
   // "/take-my-proctored-exam-for-me/",
@@ -66,7 +70,8 @@ export const sms = [
   // "/pay-someone-to-take-my-online-exam/",
 ];
 
-export const phoneEmail = [
-  "/do-my-exam/",
-  "/pay-for-someone-to-write-my-paper/",
-];
+export const phoneEmail = ["/pay-for-someone-to-write-my-paper/"];
+
+// export const detailsAndMsgForm = ["/take-my-class/"];
+
+export const phoneEmailMsgForm = ["/take-my-class/"];
