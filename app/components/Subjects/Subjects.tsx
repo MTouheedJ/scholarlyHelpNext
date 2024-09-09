@@ -109,12 +109,21 @@ const Subjects: FC<SubjectsProps> = ({ content, mainHeading, btnText }) => {
           </div>
         )}
         <div className="flex justify-center mt-8">
-          <a href="javascript:void(Tawk_API.toggle())">
-            <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
-              {/* Place an Order Now */}
-              {btnText ? `${btnText}` : "Place an Order Now"}
-            </Button>
-          </a>
+          {currentPage === "/take-my-class/" ? (
+            <Link href="#PhoneEmailMsgForm">
+              <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+                {/* Place an Order Now */}
+                {btnText ? `${btnText}` : "Place an Order Now"}
+              </Button>
+            </Link>
+          ) : (
+            <Link href="javascript:void(Tawk_API.toggle())">
+              <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+                {/* Place an Order Now */}
+                {btnText ? `${btnText}` : "Place an Order Now"}
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
