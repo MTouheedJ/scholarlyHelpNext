@@ -19,6 +19,7 @@ export const hideFooterLinks = [
   "/do-my-class/",
 ];
 export const hideWhatsappModule = [
+  "/do-my-class-1/",
   "/take-my-class/",
   "/pay-for-someone-to-write-my-paper/",
 ];
@@ -63,6 +64,7 @@ export const supportMail = [
 
 export const sms = [
   "/take-my-class/",
+  "/do-my-class-1/",
   // "/take-my-exam/",
   // "/do-my-exam/",
   // "/take-my-proctored-exam-for-me/",
