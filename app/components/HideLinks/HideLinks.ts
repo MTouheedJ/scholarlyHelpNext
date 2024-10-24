@@ -2,6 +2,7 @@ export const hideLinks = [
   "/take-my-class/",
   "/pay-for-someone-to-write-my-paper/",
   "/do-my-class/",
+  "/do-my-class-2/",
 ];
 
 export const hideFooterLinks = [
