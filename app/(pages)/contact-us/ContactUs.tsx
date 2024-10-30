@@ -17,7 +17,7 @@ const ContactUs: FC<ContactUsProps> = ({}) => {
     <div>
       <div className="bg-primary-300 py-16">
         <div className="flex justify-center">
-          <Image src={AboutUsImg} alt="image" className="max-w-80"/>
+          <Image src={AboutUsImg} alt="image" className="max-w-80" />
         </div>
         <div className="my-4 ">
           <p className="text-center md:text-5xl text-2xl font-bold text-primary-500">
@@ -52,7 +52,9 @@ const ContactUs: FC<ContactUsProps> = ({}) => {
               <Image className="max-w-8" src={EmailIcon} alt="icon" />
             </div>
             <div>
-              <p className="sm:text-xl text-primary-500 font-bold mb-3">Email</p>
+              <p className="sm:text-xl text-primary-500 font-bold mb-3">
+                Email
+              </p>
               <p className="text-primary-500 leading-7">
                 Seeking information regarding our services? Email us directly.
               </p>
@@ -107,7 +109,7 @@ const ContactUs: FC<ContactUsProps> = ({}) => {
                 <div className="w-5 mr-1">
                   <a
                     target="_blank"
-                    href="https://www.facebook.com/scholarlyhelp/"
+                    href="https://www.facebook.com/Scholarly.help"
                   >
                     <Facebook color="#2b1c51" />
                   </a>

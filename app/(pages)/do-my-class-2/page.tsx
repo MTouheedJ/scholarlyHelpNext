@@ -14,7 +14,7 @@ import MainLayout from "@/app/MainLayout";
 import Subjects from "@/app/components/Subjects/Subjects";
 import dynamic from "next/dynamic";
 import GetFreeQuote from "../do-my-class/component/GetFreeQuote";
-import { content } from "../do-my-class/content";
+import { content } from "./content";
 import AppNav from "@/app/components/NavBar/AppNav";
 // import GetFreeQuote from "./component/GetFreeQuote";
 
@@ -27,8 +27,7 @@ const WhyScholarly = dynamic(
 interface PageProps {}
 const Page: FC<PageProps> = ({}) => {
   return (
-    <>
-      <AppNav />
+    <MainLayout>
       {/* <Hero content={content.heroContent} /> */}
       <GetFreeQuote />
       <Qualities />
@@ -55,7 +54,7 @@ const Page: FC<PageProps> = ({}) => {
         content={content.subjects.subjectsContent}
       />
       <Faq content={content.faqContent} />
-    </>
+    </MainLayout>
   );
 };
 export default Page;

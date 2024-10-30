@@ -30,6 +30,8 @@ import {
 // import ChatBubble from "@/app/assets/Icons/ChatBubble";
 import chatBubble from "@/app/assets/Images/chatBubble.png";
 import axios from "axios";
+import { FaSnapchat } from "react-icons/fa";
+import { SiYoutubemusic } from "react-icons/si";
 
 interface FooterProps {}
 const Footer: FC<FooterProps> = ({}) => {
@@ -296,121 +298,126 @@ const Footer: FC<FooterProps> = ({}) => {
                 </p>
               </div>
             </div>
+            {currentPage !== "/do-my-class-2/" && (
+              <div className="md:flex justify-between gap-6 w-[40%]">
+                <div>
+                  <div className="mt-2 mb-3">
+                    <p className="font-semibold text-lg">Explore</p>
+                  </div>
+                  <div className="font-light">
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/"
+                      >
+                        <p>Home</p>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/about-us"
+                      >
+                        <p>About Us</p>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/contact-us"
+                      >
+                        <p>Contact Us</p>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="https://scholarlyhelp.com/blog/"
+                      >
+                        <p>Blog</p>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
 
-            <div>
-              <div className="mt-2 mb-3">
-                <p className="font-semibold text-lg">Explore</p>
-              </div>
-              <div className="font-light">
                 <div>
-                  <Link className="hover:font-normal hover:underline " href="/">
-                    <p>Home</p>
-                  </Link>
+                  <div className="mt-2 mb-3">
+                    <p className="font-semibold text-lg">Our Services</p>
+                  </div>
+                  <div className="font-light">
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/online-class"
+                      >
+                        <p>Online Class</p>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/exams"
+                      >
+                        <p>Exam</p>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/homework"
+                      >
+                        <p>Homework</p>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/assignment"
+                      >
+                        <p>Assignment</p>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/essay-writing"
+                      >
+                        <p>Essay Writing</p>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/about-us"
-                  >
-                    <p>About Us</p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/contact-us"
-                  >
-                    <p>Contact Us</p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="https://scholarlyhelp.com/blog/"
-                  >
-                    <p>Blog</p>
-                  </Link>
-                </div>
-              </div>
-            </div>
 
-            <div>
-              <div className="mt-2 mb-3">
-                <p className="font-semibold text-lg">Our Services</p>
-              </div>
-              <div className="font-light">
                 <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/online-class"
-                  >
-                    <p>Online Class</p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/exams"
-                  >
-                    <p>Exam</p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/homework"
-                  >
-                    <p>Homework</p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/assignment"
-                  >
-                    <p>Assignment</p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/essay-writing"
-                  >
-                    <p>Essay Writing</p>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="mt-2 mb-3">
-                <p className="font-semibold text-lg">Legal Info</p>
-              </div>
-              <div className="font-light">
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/terms-and-conditions"
-                  >
-                    <p>Terms & Conditions</p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    className="hover:font-normal hover:underline "
-                    href="/privacy"
-                  >
-                    <p>Privacy Policy</p>
-                  </Link>
-                </div>
-                {/* <div>
+                  <div className="mt-2 mb-3">
+                    <p className="font-semibold text-lg">Legal Info</p>
+                  </div>
+                  <div className="font-light">
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/terms-and-conditions"
+                      >
+                        <p>Terms & Conditions</p>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="hover:font-normal hover:underline "
+                        href="/privacy"
+                      >
+                        <p>Privacy Policy</p>
+                      </Link>
+                    </div>
+                    {/* <div>
                 <Link className="hover:font-normal hover:underline " href="#">
                   <p>Disclaimer</p>
                 </Link>
               </div> */}
+                  </div>
+                </div>
               </div>
-            </div>
-
+            )}
             <div>
               <div className="mt-2 mb-3">
                 <p className="font-semibold text-lg">Contact Info</p>
@@ -431,7 +438,7 @@ const Footer: FC<FooterProps> = ({}) => {
                   <div className="w-5 mr-1">
                     <a
                       target="_blank"
-                      href="https://www.facebook.com/scholarlyhelp/"
+                      href="https://www.facebook.com/Scholarly.help"
                     >
                       <Facebook color="#2b1c51" />
                     </a>
@@ -460,6 +467,23 @@ const Footer: FC<FooterProps> = ({}) => {
                       <Image src={Tiktok} alt="Tiktok" />
                     </a>
                   </div>
+                  <div className="w-5 h-5 text-[21px] text-primary-500 mr-1">
+                    <a
+                      target="_blank"
+                      href="https://www.snapchat.com/add/helpscholarly"
+                    >
+                      <FaSnapchat />
+                    </a>
+                  </div>
+                  <div className="w-5 h-5 text-[21px] text-primary-500">
+                    <a
+                      target="_blank"
+                      href="https://www.youtube.com/@ScholarlyHelp/"
+                    >
+                      <SiYoutubemusic />
+                    </a>
+                  </div>
+                  {/* <div className="w-5 h-5 mr-1 rounded-full bg-primary-500"></div> */}
                 </div>
 
                 <div className="flex my-2">

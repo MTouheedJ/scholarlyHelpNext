@@ -11,6 +11,7 @@ import Step4 from "@/app/components/FreeQuoteForm/Step4";
 
 interface GetFreeQuoteProps {}
 const GetFreeQuote: FC<GetFreeQuoteProps> = ({}) => {
+  const currentRoute = usePathname();
   return (
     <div>
       <div className="bg-primary-500 text-center text-white py-3 md:hidden block">
@@ -26,9 +27,10 @@ const GetFreeQuote: FC<GetFreeQuoteProps> = ({}) => {
                 Struggling To Keep Up With Your Online Classes?
               </h2>
               <div className="lg:text-2xl sm:text-xl max-w-[90%] mt-4 sm:mb-0 mb-4">
-                Pay us to handle your coursework, assignments, and discussions.
-                Ace your classes stress-free with our online class help
-                services.
+                Pay us to handle your coursework,{" "}
+                {currentRoute !== "/do-my-class-2/" && "assignments,"}
+                and discussions. Ace your classes stress-free with our online
+                class help services.
               </div>
               <div className="sm:block hidden">
                 <div className="flex mt-8">
