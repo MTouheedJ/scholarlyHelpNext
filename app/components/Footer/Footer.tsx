@@ -294,7 +294,10 @@ const Footer: FC<FooterProps> = ({}) => {
                 <p className="leading-5 ">
                   Scholarly Help delivers academic writing services. Our team of
                   qualified subject experts can help you with your challenging
-                  online classes, homework, assignments, quizzes, and exams
+                  online classes
+                  {currentPage !== "/do-my-class-2/" &&
+                    ", homework, assignments, quizzes, and exams"}
+                  .
                 </p>
               </div>
             </div>

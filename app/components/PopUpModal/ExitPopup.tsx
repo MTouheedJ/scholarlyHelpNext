@@ -124,13 +124,13 @@ const ExitPopUp: FC<ExitPopUpProps> = ({ open, handleClose }) => {
       modalId="exitPopUp"
     >
       <div>
-        <Image src={PopUpImg} alt="" />
-        <p className="text-[45px] font-bold text-[#6D6D6D] text-center">
+        <Image src={PopUpImg} alt="" className="w-[60%] mx-auto" />
+        <p className="text-3xl font-bold text-[#6D6D6D] text-center">
           Act Fast !
         </p>
-        <div className="flex justify-center items-center gap-2 text-[30px] text-[#6D6D6D]">
+        <div className="flex justify-center items-center gap-2 text-2xl text-[#6D6D6D]">
           <p>Get</p>
-          <Image src={TextImg} alt="" />
+          <Image src={TextImg} alt="" className="w-[100px]" />
           <p>Off Any Service</p>
         </div>
         <p className="text-center text-[#585858]">
@@ -144,11 +144,11 @@ const ExitPopUp: FC<ExitPopUpProps> = ({ open, handleClose }) => {
               {formatTime(timeLeft)} Minutes Remaining
             </p>
           </div>
-          <div className="border-2 rounded-[10px] py-7">
-            <p className="text-center text-secondary-500 text-6xl font-bold">
+          <div className="border-2 rounded-[10px] py-5">
+            <p className="text-center text-secondary-500 text-5xl font-bold">
               {formatTime(timeLeft)}
             </p>
-            <div className="w-[140px] text-[#6D6D6D] text-lg flex justify-between items-center mx-auto">
+            <div className="w-[110px] text-[#6D6D6D] flex justify-between items-center mx-auto">
               <p>MIN</p>
               <p>SEC</p>
             </div>
@@ -168,7 +168,7 @@ const ExitPopUp: FC<ExitPopUpProps> = ({ open, handleClose }) => {
                   }}
                 />
               </div>
-              <button
+              {/* <button
                 className="bg-[#565ADD] text-white min-w-fit px-4 py-2 rounded"
                 onClick={handleEmailSubmit}
               >
@@ -184,27 +184,28 @@ const ExitPopUp: FC<ExitPopUpProps> = ({ open, handleClose }) => {
                 ) : (
                   "Free Quote"
                 )}
-              </button>
+              </button> */}
             </div>
-            <button className="bg-[#177ee6] block md:hidden mt-3">
-              {emailLoading ? (
-                <div className="flex justify-center">
-                  <ColorRing
-                    height="40"
-                    width="40"
-                    ariaLabel="color-ring-loading"
-                    colors={["white", "white", "white", "white", "white"]}
-                  />
-                </div>
-              ) : (
-                "Email Me Free Quote"
-              )}
-            </button>
+
             {emailErr && <div className="text-red-500">{emailErr}</div>}
           </div>
 
-          <Button className="mt-3 w-full bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500 text-2xl font-bold">
-            CLAIM 10 OFF
+          <Button
+            onClick={handleEmailSubmit}
+            className="mt-3 w-full bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500 text-xl font-bold h-[45px]"
+          >
+            {emailLoading ? (
+              <div className="flex justify-center">
+                <ColorRing
+                  height="40"
+                  width="40"
+                  ariaLabel="color-ring-loading"
+                  colors={["white", "white", "white", "white", "white"]}
+                />
+              </div>
+            ) : (
+              "CLAIM 10 OFF"
+            )}
           </Button>
           <div className="flex justify-between items-center px-5 my-5">
             <Image src={TrustPilot} alt="" />
