@@ -6,7 +6,7 @@ import SideBar from "./newComponents/SideBar";
 
 function Exercise() {
   return (
-    <div className="grid grid-cols-11 w-full static">
+    <div className="grid grid-cols-11 w-full fixed">
       <div className="col-span-3">
         <SideBar />
       </div>

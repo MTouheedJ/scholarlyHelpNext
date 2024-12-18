@@ -8,7 +8,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 
 const MarkDown = ({ content }) => {
-  const formattedContent = content.replace(/\n\n/g, "\n\n&nbsp;\n\n");
+  // const formattedContent = content.replace(/\n\n/g, "\n\n&nbsp;\n\n");
 
   return (
     <div>
@@ -165,12 +165,76 @@ const MarkDown = ({ content }) => {
               </a>
             );
           },
-          ul({ children }) {
+          ul({ className, children, ...props }) {
+            if (className === "math-inline") {
+              return (
+                <span
+                  className={className}
+                  style={{
+                    fontSize: "1.1em",
+                    margin: "0 4px",
+                    display: "inline-block",
+                    lineHeight: "1.4",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </span>
+              );
+            }
+            if (className === "math-display") {
+              return (
+                <div
+                  className={className}
+                  style={{
+                    fontSize: "1.2em",
+                    textAlign: "center",
+                    margin: "20px auto",
+                    lineHeight: "1.6",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </div>
+              );
+            }
             return (
               <ul className="list-disc whitespace-normal pl-5">{children}</ul>
             );
           },
-          ol({ children, ...props }) {
+          ol({ className, children, ...props }) {
+            if (className === "math-inline") {
+              return (
+                <span
+                  className={className}
+                  style={{
+                    fontSize: "1.1em",
+                    margin: "0 4px",
+                    display: "inline-block",
+                    lineHeight: "1.4",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </span>
+              );
+            }
+            if (className === "math-display") {
+              return (
+                <div
+                  className={className}
+                  style={{
+                    fontSize: "1.2em",
+                    textAlign: "center",
+                    margin: "20px auto",
+                    lineHeight: "1.6",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </div>
+              );
+            }
             return (
               <ol
                 className="list-decimal pl-5"
@@ -184,7 +248,39 @@ const MarkDown = ({ content }) => {
               </ol>
             );
           },
-          li({ children, ...props }) {
+          li({ className, children, ...props }) {
+            if (className === "math-inline") {
+              return (
+                <span
+                  className={className}
+                  style={{
+                    fontSize: "1.1em",
+                    margin: "0 4px",
+                    display: "inline-block",
+                    lineHeight: "1.4",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </span>
+              );
+            }
+            if (className === "math-display") {
+              return (
+                <div
+                  className={className}
+                  style={{
+                    fontSize: "1.2em",
+                    textAlign: "center",
+                    margin: "20px auto",
+                    lineHeight: "1.6",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </div>
+              );
+            }
             return (
               <li
                 style={{
@@ -197,7 +293,39 @@ const MarkDown = ({ content }) => {
               </li>
             );
           },
-          p({ children, ...props }) {
+          p({ className, children, ...props }) {
+            if (className === "math-inline") {
+              return (
+                <span
+                  className={className}
+                  style={{
+                    fontSize: "1.1em",
+                    margin: "0 4px",
+                    display: "inline-block",
+                    lineHeight: "1.4",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </span>
+              );
+            }
+            if (className === "math-display") {
+              return (
+                <div
+                  className={className}
+                  style={{
+                    fontSize: "1.2em",
+                    textAlign: "center",
+                    margin: "20px auto",
+                    lineHeight: "1.6",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </div>
+              );
+            }
             return (
               <p style={{ marginTop: "0" }} {...props}>
                 {children}
@@ -221,6 +349,22 @@ const MarkDown = ({ content }) => {
                 </span>
               );
             }
+            if (className === "math-display") {
+              return (
+                <div
+                  className={className}
+                  style={{
+                    fontSize: "1.2em",
+                    textAlign: "center",
+                    margin: "20px auto",
+                    lineHeight: "1.6",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </div>
+              );
+            }
             return (
               <span className={className} {...props}>
                 {children}
@@ -228,6 +372,22 @@ const MarkDown = ({ content }) => {
             );
           },
           div({ className, children, ...props }) {
+            if (className === "math-inline") {
+              return (
+                <span
+                  className={className}
+                  style={{
+                    fontSize: "1.1em",
+                    margin: "0 4px",
+                    display: "inline-block",
+                    lineHeight: "1.4",
+                  }}
+                  {...props}
+                >
+                  {children}
+                </span>
+              );
+            }
             if (className === "math-display") {
               return (
                 <div
@@ -252,7 +412,7 @@ const MarkDown = ({ content }) => {
           },
         }}
       >
-        {formattedContent}
+        {content}
       </ReactMarkdown>
     </div>
   );

@@ -15,6 +15,7 @@ type Response = {
   content: string | null;
   imageUrl: string | null;
   createdAt: string;
+  isLoading?: boolean;
 };
 
 interface InboxProps {}
@@ -29,7 +30,6 @@ const Inbox: FC<InboxProps> = ({}) => {
   const [localUserId, setLocalUserId] = useState<string | null>(null);
   const [resData, setResData] = useState<Response[]>([]);
   const [emailDialogues, setEmailDialogues] = useState<boolean>(false);
-  const [loadingMessage, setLoadingMessage] = useState<boolean>(false); // New loading state
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -37,12 +37,22 @@ const Inbox: FC<InboxProps> = ({}) => {
     return window.crypto.randomUUID();
   };
 
+  // useEffect(() => {
+  //   if (chatContainerRef.current) {
+  //     chatContainerRef.current.scrollTo({
+  //       top: chatContainerRef.current.scrollHeight,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // }, [resData]);
   useEffect(() => {
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTo({
-        top: chatContainerRef.current.scrollHeight,
-        behavior: "smooth",
-      });
+      setTimeout(() => {
+        chatContainerRef.current?.scrollTo({
+          top: chatContainerRef.current.scrollHeight,
+          behavior: "smooth",
+        });
+      }, 100); // Small delay for rendering
     }
   }, [resData]);
 
@@ -71,7 +81,6 @@ const Inbox: FC<InboxProps> = ({}) => {
         console.error("Error fetching data:", err);
       }
     };
-
     forEmail();
   }, [localUserId]);
 
@@ -109,6 +118,7 @@ const Inbox: FC<InboxProps> = ({}) => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     if (!text && !uploadedImage) {
       setTextError("Please add an image and some description");
       return;
@@ -122,6 +132,29 @@ const Inbox: FC<InboxProps> = ({}) => {
       return;
     }
 
+    const userMessage: Response = {
+      _id: null,
+      senderId: localUserId,
+      query: text,
+      content: null,
+      imageUrl: uploadedImage ? URL.createObjectURL(uploadedImage) : null,
+      createdAt: new Date().toISOString(),
+      isLoading: false, // User messages are not "loading"
+    };
+
+    const botPlaceholder: Response = {
+      _id: null,
+      senderId: null,
+      query: null,
+      content: null,
+      imageUrl: null,
+      createdAt: new Date().toISOString(),
+      isLoading: true, // Bot response is loading
+    };
+
+    // Optimistically add the user's message and bot placeholder to the chat
+    setResData((prevData) => [...prevData, userMessage, botPlaceholder]);
+
     const fd = new FormData();
     fd.append("image", uploadedImage);
     fd.append("query", text);
@@ -130,7 +163,6 @@ const Inbox: FC<InboxProps> = ({}) => {
     setUploadedImage(null);
     setText("");
     setFileName("");
-    setLoadingMessage(true); // Start loading for the upcoming message
 
     try {
       const res = await axiosInstance.post(
@@ -138,14 +170,30 @@ const Inbox: FC<InboxProps> = ({}) => {
         fd
       );
       setEmailDialogues(res.data.showEmailPopup);
+
+      // Update the placeholder bot response with actual content
+      setResData((prevData) =>
+        prevData.map((message) =>
+          message.isLoading
+            ? {
+                ...message,
+                content: res.data.responseMessage, // Replace with actual response content
+                isLoading: false,
+              }
+            : message
+        )
+      );
     } catch (error) {
-      console.log("Message failed:", error);
+      console.error("Message failed:", error);
+      // Handle error if needed (e.g., show error message)
     } finally {
+      // Fetch updated resData after the bot's response
       const response = await axiosInstance.get(
         `/scan-to-solve/exercise-history/local/${localUserId}/`
       );
-      setResData(response.data);
-      setLoadingMessage(false); // Stop loading after receiving the response
+      setResData(
+        response.data.map((msg: Response) => ({ ...msg, isLoading: false }))
+      ); // Ensure isLoading is false for all
     }
   };
 
@@ -167,6 +215,7 @@ const Inbox: FC<InboxProps> = ({}) => {
           {resData.map((data, index) => (
             <div key={index} className="space-y-3">
               {data.senderId ? (
+                //User Messages
                 <div className="flex justify-end gap-4">
                   <div>
                     <p className="text-[#9F9F9F] text-xs mb-2 text-end">
@@ -186,6 +235,7 @@ const Inbox: FC<InboxProps> = ({}) => {
                   </div>
                 </div>
               ) : (
+                //Bot Messages
                 <div className="flex gap-4 w-[80%]">
                   <div className="pt-8">
                     <Image src={BotImg} alt="" className="min-w-10" />
@@ -195,7 +245,7 @@ const Inbox: FC<InboxProps> = ({}) => {
                     <p className="text-[#9F9F9F] text-xs mb-2">
                       {formatTime(data.createdAt)}
                     </p>
-                    {index === resData.length - 1 && loadingMessage ? (
+                    {data.isLoading ? (
                       <div className="space-y-3 animate-pulse w-[200px]">
                         <div className="grid grid-cols-2 gap-4">
                           <div className="h-2 bg-slate-700 rounded col-span-2"></div>
@@ -206,7 +256,6 @@ const Inbox: FC<InboxProps> = ({}) => {
                     ) : (
                       <div className="bg-[#F8F8F8] p-4 rounded-lg text-[#444746] text-[13px] w-fit">
                         <MarkDown content={data.content} />
-                        {/* <p>{data.content}</p> */}
                       </div>
                     )}
                   </div>

@@ -11,8 +11,8 @@ interface SideBarProps {}
 const SideBar: FC<SideBarProps> = ({}) => {
   const [howWork, setHowWork] = useState<boolean>(false);
   return (
-    <div className="bg-[#F7F9FC] w-[89%] h-screen py-9">
-      <div className="mx-auto w-[71%] h-full flex flex-col justify-between">
+    <div className="bg-[#F7F9FC] w-full h-screen py-9">
+      <div className="mx-auto w-[77%] h-full flex flex-col justify-between">
         <div>
           <Image src={ScanLogo} alt="" />
           <div className="mt-8">
@@ -32,9 +32,11 @@ const SideBar: FC<SideBarProps> = ({}) => {
           </div>
           <div className="w-full flex flex-col gap-[10px]">
             <div className="w-full border text-[#7A7A7A] border-[#7A7A7A] rounded-[5px] py-3 px-4 h-[46px]">
-              <div className="w-full flex justify-center items-center gap-2">
+              <div className="w-full flex justify-between items-center gap-2">
                 <Image src={SubscriptionIcon} alt="" />
-                <p className="text-[14px] font-medium">subscription details</p>
+                <p className="text-[14px] font-medium grow">
+                  subscription details
+                </p>
                 <IoIosArrowDown />
               </div>
             </div>
