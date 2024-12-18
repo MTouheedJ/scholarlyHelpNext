@@ -1,14 +1,11 @@
-import React, { FC, useEffect, useState } from "react";
-import PhoneNumberInput from "@/app/components/PhoneInput/PhoneInput";
-import emailIcon from "@/app/assets/Images/email-quote.png";
-import { isEmailValid, isPhoneValid } from "@/app/utilities/utilities";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { twMerge } from "tailwind-merge";
-import { ColorRing } from "react-loader-spinner";
 import axiosInstance from "@/app/axios";
+import PhoneNumberInput from "@/app/components/PhoneInput/PhoneInput";
+import { isEmailValid, isPhoneValid } from "@/app/utilities/utilities";
 import dynamic from "next/dynamic";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { FC, useEffect, useState } from "react";
+import { ColorRing } from "react-loader-spinner";
+import { twMerge } from "tailwind-merge";
 
 export type ApiPayload = {
   url: string;

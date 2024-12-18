@@ -1,23 +1,21 @@
 "use client";
 
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import Link from "next/link";
-import { AiOutlineScan } from "react-icons/ai";
-import { FiChevronRight } from "react-icons/fi";
-import { MdOutlineManageHistory } from "react-icons/md";
-import { FaDollarSign } from "react-icons/fa";
-import { HiOutlineUserPlus } from "react-icons/hi2";
-import { GrLanguage } from "react-icons/gr";
-import { IoIosLogOut } from "react-icons/io";
-import axiosInstance from "@/app/axios";
 import logo from "@/app/assets/Images/ScanToSolve.png";
-import Image from "next/image";
-import LimitReachedDialog from "./LimitReachedDialog";
+import axiosInstance from "@/app/axios";
 import { notification } from "@/app/utilities/utilities";
 import axios from "axios";
-import useAuth from "../../hooks/useAuth";
-import PaymentSuccessDialog from "./PaymentSuccessDialog";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { AiOutlineScan } from "react-icons/ai";
+import { FiChevronRight } from "react-icons/fi";
+import { HiOutlineUserPlus } from "react-icons/hi2";
+import { IoIosLogOut } from "react-icons/io";
+import { MdOutlineManageHistory } from "react-icons/md";
+import useAuth from "../../hooks/useAuth";
+import LimitReachedDialog from "./LimitReachedDialog";
+import PaymentSuccessDialog from "./PaymentSuccessDialog";
 
 function Exercise() {
   // @ts-ignore
@@ -129,7 +127,11 @@ function Exercise() {
           >
             <div className="flex items-center sm:p-4 px-1 bg-white rounded-md shadow-md justify-evenly hover:shadow-lg">
               <div className="md:basis-1/12">
-                <AiOutlineScan size={30} color="#696969" className="sm:w-9 w-5"/>
+                <AiOutlineScan
+                  size={30}
+                  color="#696969"
+                  className="sm:w-9 w-5"
+                />
               </div>
               <div className="basis-10/12 md:block hidden">
                 <p className="text-md text-[#716A6A] pl-2">Scan an exercise</p>
@@ -139,10 +141,17 @@ function Exercise() {
               </div>
             </div>
           </div>
-          <div className="md:mx-8 sm:mx-4 mx-1 my-2 text-left" onClick={showHistory}>
+          <div
+            className="md:mx-8 sm:mx-4 mx-1 my-2 text-left"
+            onClick={showHistory}
+          >
             <div className="flex items-center sm:p-4 px-1 bg-white rounded-md shadow-md justify-evenly hover:shadow-lg">
               <div className="md:basis-1/12">
-                <MdOutlineManageHistory size={30} color="#696969" className="sm:w-9 w-5"/>
+                <MdOutlineManageHistory
+                  size={30}
+                  color="#696969"
+                  className="sm:w-9 w-5"
+                />
               </div>
               <div className="basis-10/12 md:block hidden">
                 <p className="text-md text-[#716A6A] pl-2">Exercise history</p>
@@ -159,7 +168,11 @@ function Exercise() {
           <div className="md:mx-8 sm:mx-4 mx-1 my-2 text-left">
             <div className="flex items-center sm:p-4 px-1 bg-white rounded-md shadow-md justify-evenly hover:shadow-lg">
               <div className="md:basis-1/12">
-                <HiOutlineUserPlus size={30} color="#696969" className="sm:w-9 w-5"/>
+                <HiOutlineUserPlus
+                  size={30}
+                  color="#696969"
+                  className="sm:w-9 w-5"
+                />
               </div>
               <div className="basis-10/12 md:block hidden">
                 <p className="text-md text-[#716A6A] pl-2">
@@ -176,7 +189,11 @@ function Exercise() {
             <div className="md:mx-8 sm:mx-4 mx-1 my-2 text-left">
               <div className="flex items-center sm:p-4 px-1 bg-white rounded-md shadow-md justify-evenly hover:shadow-lg">
                 <div className="md:basis-1/12">
-                  <IoIosLogOut size={30} color="#696969" className="sm:w-9 w-5"/>
+                  <IoIosLogOut
+                    size={30}
+                    color="#696969"
+                    className="sm:w-9 w-5"
+                  />
                 </div>
                 <div className="basis-10/12 md:block hidden">
                   <div

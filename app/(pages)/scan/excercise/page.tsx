@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import Excercise from "./components/Excercise";
 import Scan from "@/app/layouts/Scan";
+import Excercise from "./components/Excercise";
 
 const page = () => {
   return (

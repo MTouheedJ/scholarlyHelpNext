@@ -15,6 +15,9 @@ import {
   wholeFromFreeQuote,
 } from "../HideLinks/HideLinks";
 import ContactDiary from "@/app/assets/Icons/contactdiary.svg";
+import { MdOutlineInfo } from "react-icons/md";
+import DiscaimerImg from "@/app/assets/Icons/disclaimer.png";
+
 export type ApiPayload = {
   url: string;
 };
@@ -50,6 +53,7 @@ const Step4: FC<Step4Props> = ({ text }) => {
   const [submissionErr, setSubmissionErr] = useState("");
   const [show, setShow] = useState(false);
   const [contactDetails, setContactDetails] = useState<string>("");
+  const [isTooltip, setIsTooltip] = useState<boolean>(false);
 
   const currentPage = usePathname();
   const wholeUrl = window.location.href;
@@ -340,7 +344,25 @@ const Step4: FC<Step4Props> = ({ text }) => {
     return (
       <div className={`${EmailPhone && "w-full"}`}>
         <p className="font-bold">Get a Text Back in 5 Minutes!</p>
-        <div className="bg-white py-5 px-5 rounded-md mt-3">
+        <div className="bg-white pb-5 pt-2 px-5 rounded-md mt-3 relative">
+          <Image
+            src={DiscaimerImg}
+            alt=""
+            className="ml-auto mr-3 cursor-pointer"
+            onMouseEnter={() => setIsTooltip(!isTooltip)}
+          />
+          {isTooltip && (
+            <p
+              onMouseLeave={() => setIsTooltip(false)}
+              className="text-xs text-gray-600 bg-white shadow-lg rounded-md p-3 max-w-[300px] absolute -right-[250px]"
+            >
+              By entering your number, you agree to receive mobile messages from
+              ScholarlyHelp at the phone number provided. Message frequency
+              varies. Message and data rates may apply. Carriers are not liable
+              for any delays or undelivered messages. Reply STOP to opt-out.
+              View our Privacy Policy.
+            </p>
+          )}
           {/* <h4 className="text-center font-semibold text-xl">
         Just tell us your phone number / Email and we will text you ASAP
         Enter Your Contact Details and We'll Contact You ASAP

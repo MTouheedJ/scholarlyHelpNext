@@ -135,14 +135,12 @@ const ExitPopUp: FC<ExitPopUpProps> = ({ open, handleClose }) => {
         </div>
         <p className="text-center text-[#585858]">
           Enter your details to redeem your discount before time runs out!
-          <br />
-          Hurry, time is running out!
+          {/* <br />
+          Hurry, time is running out! */}
         </p>
         <div className="px-16 pt-6 relative mt-2">
           <div className="absolute top-3 left-[112px] bg-white w-[60%] text-center">
-            <p className="text-[#6D6D6D]">
-              {formatTime(timeLeft)} Minutes Remaining
-            </p>
+            <p className="text-[#6D6D6D]">Hurry, time is running out!</p>
           </div>
           <div className="border-2 rounded-[10px] py-5">
             <p className="text-center text-secondary-500 text-5xl font-bold">

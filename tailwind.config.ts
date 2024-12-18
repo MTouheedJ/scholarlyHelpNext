@@ -1,4 +1,3 @@
-import { Poppins } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,16 +7,16 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens:{
-      'sm': '576px',
+    screens: {
+      sm: "576px",
       // => @media (min-width: 576px) { ... }
-      'md': '768px',
+      md: "768px",
       // => @media (min-width: 768px) { ... }
-      'lg': '992px',
+      lg: "992px",
       // => @media (min-width: 992px) { ... }
-      'xl': '1200px',
+      xl: "1200px",
       // => @media (min-width: 1200px) { ... }
-      '2xl': '1400px',
+      "2xl": "1400px",
       // => @media (min-width: 1400px) { ... }
     },
     extend: {
@@ -26,22 +25,22 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors:{
-        primary:{
-          100:"#F7F7FD",
-          200:"#ECECFB",
-          300:"#D1D1F7", //original
-          400:"#565add",
-          500:"#2B1C50",
-          600:"#212529",
+      colors: {
+        primary: {
+          100: "#F7F7FD",
+          200: "#ECECFB",
+          300: "#D1D1F7", //original
+          400: "#565add",
+          500: "#2B1C50",
+          600: "#212529",
         },
-        secondary:{
-          200:"#F2E0C7",
-          500:"#ff641a", //original
+        secondary: {
+          200: "#F2E0C7",
+          500: "#ff641a", //original
         },
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config;

@@ -51,6 +51,13 @@ const AboutUs: FC<AboutUsProps> = ({}) => {
           project type and help you find the finest means to accomplish your
           goal.
         </p>
+        <p className="text-5xl leading-7 py-12 font-bold text-primary-500 text-center">
+          Ownership
+        </p>
+        <p className="text-lg leading-7">
+          ScholarlyHelp is proudly owned by Eliya Enterprises, dedicated to
+          providing quality services for online learning.
+        </p>
       </div>
     </div>
   );
