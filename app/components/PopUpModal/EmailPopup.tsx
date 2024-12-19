@@ -70,7 +70,7 @@ const EmailPopup: FC<EmailPopupProps> = ({ open, handleClose }) => {
     >
       <div className="sm:min-w-[450px] min-w-[280px] py-5">
         <form onSubmit={handleEmailSubmit} className="space-y-5">
-          <p className="font-medium">Unlock More Answers with Your Email</p>
+          <p className="font-medium">Unlock all answers with your email</p>
           <div className="flex items-center border-b p-2">
             <Image src={emailIcon} className=" w-6 h-4 mt-1 ml-1" alt="icon" />
             <input

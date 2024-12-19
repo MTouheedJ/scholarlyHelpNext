@@ -30,6 +30,7 @@ const Inbox: FC<InboxProps> = ({}) => {
   const [localUserId, setLocalUserId] = useState<string | null>(null);
   const [resData, setResData] = useState<Response[]>([]);
   const [emailDialogues, setEmailDialogues] = useState<boolean>(false);
+  const [showEmailPopup, setShowEmailPopup] = useState<boolean>(false);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -37,14 +38,14 @@ const Inbox: FC<InboxProps> = ({}) => {
     return window.crypto.randomUUID();
   };
 
-  // useEffect(() => {
-  //   if (chatContainerRef.current) {
-  //     chatContainerRef.current.scrollTo({
-  //       top: chatContainerRef.current.scrollHeight,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // }, [resData]);
+  useEffect(() => {
+    if (emailDialogues) {
+      const timer = setTimeout(() => setShowEmailPopup(true), 2000);
+      return () => clearTimeout(timer);
+    } else {
+      setShowEmailPopup(false);
+    }
+  }, [emailDialogues]);
   useEffect(() => {
     if (chatContainerRef.current) {
       setTimeout(() => {
@@ -310,9 +311,9 @@ const Inbox: FC<InboxProps> = ({}) => {
           {textError && <p className="text-sm text-red-600">{textError}</p>}
         </div>
       </div>
-      {emailDialogues && (
+      {showEmailPopup && (
         <EmailPopup
-          open={emailDialogues}
+          open={showEmailPopup}
           handleClose={() => setEmailDialogues(false)}
         />
       )}
