@@ -1,10 +1,10 @@
 "use client";
-import Image from "next/image";
-import { FC, useEffect, useState } from "react";
 import ContactDiary from "@/app/assets/Icons/contactdiary.svg";
-import { ColorRing } from "react-loader-spinner";
-import { usePathname, useRouter } from "next/navigation";
 import axiosInstance from "@/app/axios";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { FC, useEffect, useState } from "react";
+import { ColorRing } from "react-loader-spinner";
 
 type PhoneEmailPayload = {
   FBCLID: string;
@@ -45,15 +45,29 @@ const DetailsAndMsgForm: FC<DetailsAndMsgFormProps> = ({}) => {
     e.preventDefault();
     setWithEmailLoading(true);
     const regex = /^(.+@.+|\d{10}|\+\d{1,2}\(\d{3}\)\d{3}-\d{4})$/;
-    if (!regex.test(contactDetails)) {
-      setPhoneErr("❌ Please enter a valid email or phone number.");
-      setWithEmailLoading(false);
-      return;
-    }
-    if (!contactDetails) {
-      setPhoneErr("Please enter email or phone number.");
-      setWithEmailLoading(false);
-      return;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (currentPage === "/take-my-class/") {
+      if (!emailRegex.test(contactDetails)) {
+        setPhoneErr("❌ Please enter a valid email.");
+        setWithEmailLoading(false);
+        return;
+      }
+      if (!contactDetails) {
+        setPhoneErr("Please enter email.");
+        setWithEmailLoading(false);
+        return;
+      }
+    } else {
+      if (!regex.test(contactDetails)) {
+        setPhoneErr("❌ Please enter a valid email or phone number.");
+        setWithEmailLoading(false);
+        return;
+      }
+      if (!contactDetails) {
+        setPhoneErr("Please enter email or phone number.");
+        setWithEmailLoading(false);
+        return;
+      }
     }
     // const fd = new FormData();
     // if (FBCLID) {
@@ -98,7 +112,11 @@ const DetailsAndMsgForm: FC<DetailsAndMsgFormProps> = ({}) => {
                 <Image src={ContactDiary} alt="" />
                 <input
                   type="text"
-                  placeholder="Phone / Email "
+                  placeholder={
+                    currentPage === "/take-my-class/"
+                      ? "Email"
+                      : "Phone / Email"
+                  }
                   value={contactDetails}
                   onChange={(e) => {
                     setContactDetails(e.target.value);

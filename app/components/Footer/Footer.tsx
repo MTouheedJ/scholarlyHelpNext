@@ -1,32 +1,30 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
-import ScheduleIcon from "@/app/assets/Images/schedule-icon.webp";
-import Image from "next/image";
-import Button from "../Button/Button";
+import Facebook from "@/app/assets/Icons/Facebook";
 import Logo from "@/app/assets/Icons/Logo";
 import Phone from "@/app/assets/Icons/Phone";
-import Facebook from "@/app/assets/Icons/Facebook";
+import AmericanExpress from "@/app/assets/Images/americanExpressIcon.webp";
 import Instagram from "@/app/assets/Images/instagram.webp";
 import Linkedin from "@/app/assets/Images/linkedIn.webp";
-import Tiktok from "@/app/assets/Images/tiktok.webp";
 import MasterCard from "@/app/assets/Images/masterCardIcon.webp";
-import Visa from "@/app/assets/Images/visaIcon.webp";
-import AmericanExpress from "@/app/assets/Images/americanExpressIcon.webp";
 import Paypal from "@/app/assets/Images/payPal.webp";
-import CopyRight from "./CopyRight";
+import Tiktok from "@/app/assets/Images/tiktok.webp";
+import Visa from "@/app/assets/Images/visaIcon.webp";
+import Image from "next/image";
 import Link from "next/link";
+import { FC, useEffect, useState } from "react";
+import CopyRight from "./CopyRight";
 // import whatsappIconFooter from "@/app/assets/Images/whatsapp-icon.svg";
-import whatsappIconFooter from "@/app/assets/Images/whatsapplogo.png";
-import whatsappIcon2 from "@/app/assets/Images/whatsappIcon2.png";
 import cellPhone from "@/app/assets/Images/cellphone.png";
-import "./footer.css";
+import whatsappIcon2 from "@/app/assets/Images/whatsappIcon2.png";
+import whatsappIconFooter from "@/app/assets/Images/whatsapplogo.png";
 import { usePathname } from "next/navigation";
 import {
-  hideWhatsappModule,
   hideFooterLinks,
+  hideWhatsappModule,
   sms,
 } from "../HideLinks/HideLinks";
+import "./footer.css";
 // import ChatBubble from "@/app/assets/Icons/ChatBubble";
 import chatBubble from "@/app/assets/Images/chatBubble.png";
 import axios from "axios";

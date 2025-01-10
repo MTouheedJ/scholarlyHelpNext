@@ -1,12 +1,11 @@
 "use client";
-import Image from "next/image";
-import { FC, useEffect, useState } from "react";
 import emailIcon from "@/app/assets/Images/email-quote.png";
-import PhoneNumberInput from "@/app/components/PhoneInput/PhoneInput";
-import { twMerge } from "tailwind-merge";
-import { ColorRing } from "react-loader-spinner";
 import axiosInstance from "@/app/axios";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { FC, useEffect, useState } from "react";
+import { ColorRing } from "react-loader-spinner";
+import PhoneNumberInput from "../PhoneInput/PhoneInput";
 
 type PayLoad = {
   email: string;
@@ -30,7 +29,7 @@ const PhoneEmailMsgFrom: FC<PhoneEmailMsgFromProps> = ({}) => {
   const [wholeUrl, setWholeUrl] = useState<string>("");
   const router = useRouter();
   // const wholeUrl = window.location.href;
-
+  const currentPage = usePathname();
   useEffect(() => {
     // Ensure this code runs only on the client
     if (typeof window !== "undefined") {
@@ -52,15 +51,17 @@ const PhoneEmailMsgFrom: FC<PhoneEmailMsgFromProps> = ({}) => {
     setLoading(true);
     const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
     const phoneRegex = /^\+1[2-9]\d{2}[2-9](?!11)\d{6}$/;
-    if (!phoneNumber) {
-      setPhoneErr("Phone Number is required");
-      setLoading(false);
-      return;
-    }
-    if (!phoneRegex.test(phoneNumber)) {
-      setPhoneErr("Invalid Phone Number");
-      setLoading(false);
-      return;
+    if (currentPage !== "/take-my-class/") {
+      if (!phoneNumber) {
+        setPhoneErr("Phone Number is required");
+        setLoading(false);
+        return;
+      }
+      if (!phoneRegex.test(phoneNumber)) {
+        setPhoneErr("Invalid Phone Number");
+        setLoading(false);
+        return;
+      }
     }
     if (email && !emailRegex.test(email)) {
       setEmailErr("Invalid Email");
@@ -92,15 +93,17 @@ const PhoneEmailMsgFrom: FC<PhoneEmailMsgFromProps> = ({}) => {
       <div className="bg-white py-5 px-5 rounded-md mt-3">
         <form className="flex flex-col gap-2" onSubmit={handleFormSubmit}>
           <div className="flex flex-col items-start">
-            <div className="flex justify-between w-full p-1 items-center rounded-md border-2 border-[#c1c1c1]">
-              <PhoneNumberInput
-                value={phoneNumber}
-                setValue={(val) => {
-                  setPhoneErr("");
-                  setPhoneNumber(val);
-                }}
-              />
-            </div>
+            {currentPage !== "/take-my-class/" && (
+              <div className="flex justify-between w-full p-1 items-center rounded-md border-2 border-[#c1c1c1]">
+                <PhoneNumberInput
+                  value={phoneNumber}
+                  setValue={(val) => {
+                    setPhoneErr("");
+                    setPhoneNumber(val);
+                  }}
+                />
+              </div>
+            )}
             {phoneErr && <div className="text-red-500">{phoneErr}</div>}
           </div>
           <div className="flex flex-col w-full">
