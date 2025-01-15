@@ -1,19 +1,17 @@
-import { FC } from "react";
-import { content } from "./content";
-import Hero from "@/app/components/Hero/Hero";
-import Qualities from "@/app/components/Qualities/Qualities";
-import SiteReviews from "@/app/components/SiteReviews/SiteReviews";
+import MainLayout from "@/app/MainLayout";
 import AcademicPartner from "@/app/components/AcademicPartner/AcademicPartner";
+import CustomerReviews from "@/app/components/CustomerReviews/CustomerReviews";
 import ExcellenceProof from "@/app/components/ExcellenceProof/ExcellenceProof";
+import Faq from "@/app/components/Faq/Faq";
+import Hero from "@/app/components/Hero/Hero";
 import Process from "@/app/components/Process/Process";
 import { processContent } from "@/app/components/Process/content";
+import Qualities from "@/app/components/Qualities/Qualities";
 import Samples from "@/app/components/Samples/Samples";
-import CustomerReviews from "@/app/components/CustomerReviews/CustomerReviews";
-import Faq from "@/app/components/Faq/Faq";
-import MainLayout from "@/app/MainLayout";
+import SiteReviews from "@/app/components/SiteReviews/SiteReviews";
 import Subjects from "@/app/components/Subjects/Subjects";
-import ExamType from "@/app/components/ExamType/ExamType";
-import VariousName from "@/app/components/VariousName/VariousName";
+import { FC } from "react";
+import { content } from "./content";
 
 import dynamic from "next/dynamic";
 const WhyScholarly = dynamic(
@@ -64,7 +62,8 @@ export default Page;
 
 export function generateMetadata({}) {
   return {
-    title: "Help Me Do My Assignment | Online Assignment Help | Scholarly Help",
-    description: "Need online assignment help? Do you know you can pay someone to do assignment? We are always there to help on your call - do my assignment for me. Contact now!"
+    title: "Assignment Helper | Pay Someone to Do My Assignment for Me",
+    description:
+      "Struggling with assignments? Get professional assignment help online. Pay someone to do your assignment with trusted, affordable, and secure services. Hire expert assignment helpers today and make success stress-free!",
   };
 }

@@ -1,5 +1,4 @@
 export const hideLinks = [
-  "/take-my-class/",
   "/pay-for-someone-to-write-my-paper/",
   "/do-my-class/",
   "/do-my-class-2/",
@@ -25,8 +24,8 @@ export const hideWhatsappModule = [
   "/pay-for-someone-to-write-my-paper/",
 ];
 // export const hideTalktoModule = ["/pay-for-someone-to-write-my-paper/"];
-export const hideTalktoModule = [""];
-export const withChatNow = ["/do-my-class/,/take-my-class/"];
+export const hideTalktoModule = ["/take-my-class/"];
+export const withChatNow = ["/do-my-class/", "/take-my-class/"];
 
 export const wholeFromFreeQuote = [
   // "/do-my-class/",
@@ -38,10 +37,7 @@ export const wholeFromFreeQuote = [
   "",
 ];
 
-export const emailFormFreeQuote = [
-  // "/take-my-class/"
-  "",
-];
+export const emailFormFreeQuote = ["/take-my-class/"];
 export const formFreeQuote = [
   "",
   // "/take-my-class/",
@@ -77,4 +73,4 @@ export const phoneEmail = ["/pay-for-someone-to-write-my-paper/"];
 
 // export const detailsAndMsgForm = ["/take-my-class/"];
 
-export const phoneEmailMsgForm = ["/take-my-class/"];
+export const phoneEmailMsgForm = [""];

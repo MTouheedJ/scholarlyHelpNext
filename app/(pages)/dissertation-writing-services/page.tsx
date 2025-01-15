@@ -1,21 +1,20 @@
 import { FC } from "react";
 // import { content } from "./content";
-import Hero from "@/app/components/Hero/Hero";
-import Qualities from "@/app/components/Qualities/Qualities";
-import SiteReviews from "@/app/components/SiteReviews/SiteReviews";
+import MainLayout from "@/app/MainLayout";
 import AcademicPartner from "@/app/components/AcademicPartner/AcademicPartner";
+import CustomerReviews from "@/app/components/CustomerReviews/CustomerReviews";
 import ExcellenceProof from "@/app/components/ExcellenceProof/ExcellenceProof";
+import Faq from "@/app/components/Faq/Faq";
+import ContactSection from "@/app/components/Form/ContactSection";
+import Hero from "@/app/components/Hero/Hero";
 import Process from "@/app/components/Process/Process";
 import { processContent } from "@/app/components/Process/content";
+import Qualities from "@/app/components/Qualities/Qualities";
 import Samples from "@/app/components/Samples/Samples";
-import CustomerReviews from "@/app/components/CustomerReviews/CustomerReviews";
-import Faq from "@/app/components/Faq/Faq";
-import MainLayout from "@/app/MainLayout";
+import SiteReviews from "@/app/components/SiteReviews/SiteReviews";
 import Subjects from "@/app/components/Subjects/Subjects";
 import dynamic from "next/dynamic";
-import ContactSection from "@/app/components/Form/ContactSection";
-import Script from "next/script";
-import { content } from "../take-my-class/content";
+import { content } from "../take-my-class/content222";
 
 const WhyScholarly = dynamic(
   () => import("@/app/components/WhyScholarly/WhyScholarly"),

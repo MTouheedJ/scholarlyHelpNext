@@ -1,18 +1,18 @@
+import Logo from "@/app/assets/Icons/Logo";
+import TextImg from "@/app/assets/Images/10percent.png";
+import emailIcon from "@/app/assets/Images/email-quote.png";
+import PopUpImg from "@/app/assets/Images/exitPopupImg.png";
+import TrustPilot from "@/app/assets/Images/trustPilotExitPopup.png";
+import axiosInstance from "@/app/axios";
+import { isEmailValid } from "@/app/utilities/utilities";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
+import { ColorRing } from "react-loader-spinner";
 import Modal from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-import Image from "next/image";
-import PopUpImg from "@/app/assets/Images/exitPopupImg.png";
-import TextImg from "@/app/assets/Images/10percent.png";
 import Button from "../Button/Button";
-import TrustPilot from "@/app/assets/Images/trustPilotExitPopup.png";
-import Logo from "@/app/assets/Icons/Logo";
-import { ColorRing } from "react-loader-spinner";
-import emailIcon from "@/app/assets/Images/email-quote.png";
 import { ApiPayload } from "../FreeQuoteForm/Step4";
-import { isEmailValid } from "@/app/utilities/utilities";
-import axiosInstance from "@/app/axios";
-import { useRouter } from "next/navigation";
 
 const initialApiPayload: ApiPayload = {
   url: "",
@@ -96,7 +96,7 @@ const ExitPopUp: FC<ExitPopUpProps> = ({ open, handleClose }) => {
     try {
       await axiosInstance.post(`/order/quote`, fd);
       setEmailLoading(false);
-      router.push("/thank-you");
+      router.push("/thank-you-2");
     } catch (error) {
       // @ts-ignore
       setSubmissionErr(error?.response?.data?.message);

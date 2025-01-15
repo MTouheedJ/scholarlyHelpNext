@@ -1,25 +1,22 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import HeroBg from "@/app/assets/Images/bubblesBg.svg";
-import SemiCircle from "@/app/assets/Images/semiCircle.svg";
-import Dots from "@/app/assets/Images/dots.svg";
-import Image from "next/image";
-import Button from "@/app/components/Button/Button";
-import Education from "./Education";
-import Quantity from "./Quantity";
-import DateTime from "./DateTime";
-import DownChevron from "@/app/assets/Icons/DownChevron";
 import useBreakpoint from "@/app/(pages)/hooks/useMediabreakpoint";
+import CalenderIcon from "@/app/assets/Icons/Calender";
+import DownChevron from "@/app/assets/Icons/DownChevron";
 import Minus from "@/app/assets/Icons/Minus";
 import Plus from "@/app/assets/Icons/Plus";
-import Datetime from "react-datetime";
+import HeroBg from "@/app/assets/Images/bubblesBg.svg";
+import Dots from "@/app/assets/Images/dots.svg";
+import SemiCircle from "@/app/assets/Images/semiCircle.svg";
+import Button from "@/app/components/Button/Button";
 import { formattedDate } from "@/app/utilities/utilities";
 import dayjs from "dayjs";
-import CalenderIcon from "@/app/assets/Icons/Calender";
-import "react-datetime/css/react-datetime.css";
 import moment from "moment";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { FC, useEffect, useState } from "react";
+import Datetime from "react-datetime";
+import "react-datetime/css/react-datetime.css";
 
 interface HeroProps {}
 const Hero: FC<HeroProps> = ({}) => {
@@ -106,11 +103,11 @@ const Hero: FC<HeroProps> = ({}) => {
                   <Image src={Dots} alt="" />
                 </div>
                 <div className="text-primary-400 md:text-5xl text-2xl font-bold relative z-10">
-                  <p className=" md:leading-[63px]">
+                  <h1 className=" md:leading-[63px]">
                     Get Expert
                     <br />
                     Paper Help Now
-                  </p>
+                  </h1>
                 </div>
                 <div className="mt-3 relative z-10 md:text-lg text-sm">
                   We deliver the most trustworthy academic

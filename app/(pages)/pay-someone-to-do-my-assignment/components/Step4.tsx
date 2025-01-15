@@ -1,19 +1,16 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 // import "./index.css";
 
 import PhoneNumberInput from "@/app/components/PhoneInput/PhoneInput";
 // import emailIcon from "../../assets/images/email-quote.png";
-import emailIcon from "@/app/assets/Images/email-quote.png";
-import axios from "axios";
 import { isEmailValid, isPhoneValid } from "@/app/utilities/utilities";
 // import { Button, Col, Row, Toast, ToastContainer } from "react-bootstrap";
-import { useRouter } from "next/navigation";
-import { ApiPayload } from "./GetFreeQuote";
-import Image from "next/image";
-import { twMerge } from "tailwind-merge";
-import { ColorRing } from "react-loader-spinner";
 import axiosInstance from "@/app/axios";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
+import { ColorRing } from "react-loader-spinner";
+import { twMerge } from "tailwind-merge";
+import { ApiPayload } from "./GetFreeQuote";
 
 type Step4Props = {
   apiPayload: ApiPayload;
@@ -97,7 +94,7 @@ const Step4: FC<Step4Props> = ({ apiPayload }) => {
         },
       });
       setWithPhoneLoading(false);
-      router.push("/thank-you");
+      router.push("/thank-you-2");
     } catch (error) {
       // @ts-ignore
       setSubmissionErr(error?.response?.data?.message);

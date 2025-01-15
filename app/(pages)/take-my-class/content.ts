@@ -1,24 +1,25 @@
-import ScheduleIcon from "@/app/assets/Images/schedule-icon.webp";
+import GirlWithBoard from "@/app/assets/Images/girlsWithPaperBoard.webp";
 import Grades from "@/app/assets/Images/grades.webp";
 import Homework from "@/app/assets/Images/homework.webp";
-import Write from "@/app/assets/Images/write.webp";
 import Notes from "@/app/assets/Images/notes.webp";
-import GirlWithBoard from "@/app/assets/Images/girlsWithPaperBoard.webp";
 import Proof1 from "@/app/assets/Images/proof-1.webp";
 import Proof2 from "@/app/assets/Images/proof-2.webp";
 import Proof3 from "@/app/assets/Images/proof-3.webp";
 import Proof4 from "@/app/assets/Images/proof-4.webp";
 import Proof5 from "@/app/assets/Images/proof-5.webp";
 import Proof6 from "@/app/assets/Images/proof-6.webp";
+import ScheduleIcon from "@/app/assets/Images/schedule-icon.webp";
+import Write from "@/app/assets/Images/write.webp";
 
 export const content = {
   btnText: "Take my online class",
   heroContent: {
     heading1: "",
-    mainHeading: `Guaranteed Grades in Your Online Classes `,
+    mainHeading: `Stop Sacrificing Your Time – Let Us Manage Your Online Classes While You Grow Your Career
+`,
     heading2: "",
     description:
-      "We take care of your Full Classes, Exams, Assignments, and Discussions so you can focus on what matters most to you.",
+      "By Outsourcing Your Online Classes to Us, You'll Free Up Time to Focus on What Brings You the Money",
   },
   academic: {
     mainheading: "Why Choose Us? Do My Online Class with Confidence!",

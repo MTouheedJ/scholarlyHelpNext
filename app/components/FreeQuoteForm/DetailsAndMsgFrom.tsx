@@ -141,7 +141,7 @@ const DetailsAndMsgForm: FC<DetailsAndMsgFormProps> = ({}) => {
                       />
                     </div>
                   ) : (
-                    "Text Me Free Quote"
+                    "Email Me Free Quote"
                   )}
                 </button>
               </form>

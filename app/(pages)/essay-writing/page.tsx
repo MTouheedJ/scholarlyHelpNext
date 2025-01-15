@@ -1,25 +1,24 @@
-
-
-import { FC } from "react";
-import { content } from "./content";
-import Hero from "@/app/components/Hero/Hero";
-import Qualities from "@/app/components/Qualities/Qualities";
-import SiteReviews from "@/app/components/SiteReviews/SiteReviews";
+import MainLayout from "@/app/MainLayout";
 import AcademicPartner from "@/app/components/AcademicPartner/AcademicPartner";
+import CustomerReviews from "@/app/components/CustomerReviews/CustomerReviews";
 import ExcellenceProof from "@/app/components/ExcellenceProof/ExcellenceProof";
+import Faq from "@/app/components/Faq/Faq";
+import Hero from "@/app/components/Hero/Hero";
 import Process from "@/app/components/Process/Process";
 import { processContent } from "@/app/components/Process/content";
+import Qualities from "@/app/components/Qualities/Qualities";
 import Samples from "@/app/components/Samples/Samples";
-import CustomerReviews from "@/app/components/CustomerReviews/CustomerReviews";
-import Faq from "@/app/components/Faq/Faq";
-import MainLayout from "@/app/MainLayout";
+import SiteReviews from "@/app/components/SiteReviews/SiteReviews";
 import Subjects from "@/app/components/Subjects/Subjects";
-import ExamType from "@/app/components/ExamType/ExamType";
-import VariousName from "@/app/components/VariousName/VariousName";
 import dynamic from "next/dynamic";
-const WhyScholarly= dynamic(() => import("@/app/components/WhyScholarly/WhyScholarly"), {
-  ssr: false,
-  });
+import { FC } from "react";
+import { content } from "./content";
+const WhyScholarly = dynamic(
+  () => import("@/app/components/WhyScholarly/WhyScholarly"),
+  {
+    ssr: false,
+  }
+);
 interface PageProps {}
 const Page: FC<PageProps> = ({}) => {
   // return <div>test</div>
@@ -28,13 +27,27 @@ const Page: FC<PageProps> = ({}) => {
       <Hero content={content.heroContent} />
       <Qualities />
       <SiteReviews />
-      <WhyScholarly header={content.whyScholarly} content={content.whyScholarly.whyScholarlyContent} />
-      <AcademicPartner btnText={content.btnText}  mainHeading={content.academic.mainheading} content={content.academic.academicContent}/>
-      <ExcellenceProof btnText={content.btnText}  content={content.excellenceProofContent} />
+      <WhyScholarly
+        header={content.whyScholarly}
+        content={content.whyScholarly.whyScholarlyContent}
+      />
+      <AcademicPartner
+        btnText={content.btnText}
+        mainHeading={content.academic.mainheading}
+        content={content.academic.academicContent}
+      />
+      <ExcellenceProof
+        btnText={content.btnText}
+        content={content.excellenceProofContent}
+      />
       <Process content={processContent} />
-      <Samples btnText={content.btnText}/>
-      <CustomerReviews btnText={content.btnText}/>
-      <Subjects btnText={content.btnText} mainHeading={content.subjects.mainHeading} content={content.subjects.subjectsContent}/>
+      <Samples btnText={content.btnText} />
+      <CustomerReviews btnText={content.btnText} />
+      <Subjects
+        btnText={content.btnText}
+        mainHeading={content.subjects.mainHeading}
+        content={content.subjects.subjectsContent}
+      />
       <Faq content={content.faqContent} />
     </MainLayout>
   );
@@ -43,7 +56,8 @@ export default Page;
 
 export function generateMetadata({}) {
   return {
-    title: "Write My Essay | Essay Writing Services | No Advance Payment - Scholarly Help",
-    description: "Scholarly Help has got best essay writers. We are a reliable option for you when it comes to urgent, fast and legit essay writing services. Order us to write my essay now!"
+    title: "Pay Someone to Write Your Essay | Hire Essay Writing Experts",
+    description:
+      "Need help with essays? Hire professionals to take care of your essay writing. Pay for affordable, plagiarism-free services and get it done today!",
   };
 }

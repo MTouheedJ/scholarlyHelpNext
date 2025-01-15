@@ -1,20 +1,18 @@
-import { FC } from "react";
-import { content } from "./content";
-import Hero from "@/app/components/Hero/Hero";
-import Qualities from "@/app/components/Qualities/Qualities";
-import SiteReviews from "@/app/components/SiteReviews/SiteReviews";
+import MainLayout from "@/app/MainLayout";
 import AcademicPartner from "@/app/components/AcademicPartner/AcademicPartner";
+import CustomerReviews from "@/app/components/CustomerReviews/CustomerReviews";
 import ExcellenceProof from "@/app/components/ExcellenceProof/ExcellenceProof";
+import Faq from "@/app/components/Faq/Faq";
+import Hero from "@/app/components/Hero/Hero";
 import Process from "@/app/components/Process/Process";
 import { processContent } from "@/app/components/Process/content";
+import Qualities from "@/app/components/Qualities/Qualities";
 import Samples from "@/app/components/Samples/Samples";
-import CustomerReviews from "@/app/components/CustomerReviews/CustomerReviews";
-import Faq from "@/app/components/Faq/Faq";
-import MainLayout from "@/app/MainLayout";
+import SiteReviews from "@/app/components/SiteReviews/SiteReviews";
 import Subjects from "@/app/components/Subjects/Subjects";
-import ExamType from "@/app/components/ExamType/ExamType";
-import VariousName from "@/app/components/VariousName/VariousName";
 import dynamic from "next/dynamic";
+import { FC } from "react";
+import { content } from "./content";
 
 // import type { Metadata } from "next";
 
@@ -28,8 +26,6 @@ const WhyScholarly = dynamic(
     ssr: false,
   }
 );
-
-
 
 interface PageProps {}
 const Page: FC<PageProps> = ({}) => {
@@ -68,7 +64,8 @@ export default Page;
 
 export function generateMetadata({}) {
   return {
-    title: "Do My Accounting Assignment for Me | Scholarly Help",
-    description: "Can someone do my accounting assignment for me? Ask Scholarly Help for assignment assistance and get next-level performance."
+    title: "Pay Someone to Do My Accounting Assignment | Hire Experts",
+    description:
+      "Struggling with accounting? Pay someone to do your accounting assignment. Hire experts for balance sheets, audits, and financial analysis now!",
   };
 }

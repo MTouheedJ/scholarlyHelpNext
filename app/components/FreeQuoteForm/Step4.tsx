@@ -1,22 +1,20 @@
-import React, { FC, useEffect, useState } from "react";
-import PhoneNumberInput from "@/app/components/PhoneInput/PhoneInput";
+import ContactDiary from "@/app/assets/Icons/contactdiary.svg";
+import DiscaimerImg from "@/app/assets/Icons/disclaimer.png";
 import emailIcon from "@/app/assets/Images/email-quote.png";
-import { isEmailValid, isPhoneValid } from "@/app/utilities/utilities";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { twMerge } from "tailwind-merge";
-import { ColorRing } from "react-loader-spinner";
 import axiosInstance from "@/app/axios";
+import PhoneNumberInput from "@/app/components/PhoneInput/PhoneInput";
+import { isEmailValid, isPhoneValid } from "@/app/utilities/utilities";
 import dynamic from "next/dynamic";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import React, { FC, useEffect, useState } from "react";
+import { ColorRing } from "react-loader-spinner";
+import { twMerge } from "tailwind-merge";
 import {
   emailFormFreeQuote,
   phoneEmail,
   wholeFromFreeQuote,
 } from "../HideLinks/HideLinks";
-import ContactDiary from "@/app/assets/Icons/contactdiary.svg";
-import { MdOutlineInfo } from "react-icons/md";
-import DiscaimerImg from "@/app/assets/Icons/disclaimer.png";
 
 export type ApiPayload = {
   url: string;
@@ -153,7 +151,7 @@ const Step4: FC<Step4Props> = ({ text }) => {
     try {
       await axiosInstance.post(`/order/quote`, fd);
       setWithEmailLoading(false);
-      router.push("/thank-you");
+      router.push("/thank-you-2/");
     } catch (error) {
       // @ts-ignore
       setSubmissionErr(error?.response?.data?.message);
@@ -389,7 +387,7 @@ const Step4: FC<Step4Props> = ({ text }) => {
                       //   withEmailLoading && "disabled"
                       // }`}
                       className={twMerge(
-                        `${submitBtnClass} bg-[#177ee6] hidden md:block`,
+                        `${submitBtnClass} bg-[#fd7636] hidden md:block`,
                         withEmailLoading && "bg-gray-400"
                       )}
                       onClick={submitWithEmail}
@@ -416,7 +414,7 @@ const Step4: FC<Step4Props> = ({ text }) => {
                   </div>
                   <button
                     className={twMerge(
-                      `${submitBtnClass} bg-[#177ee6] block md:hidden mt-3`,
+                      `${submitBtnClass} bg-[#fd7636] block md:hidden mt-3`,
                       withEmailLoading && "bg-gray-400"
                     )}
                     onClick={submitWithEmail}

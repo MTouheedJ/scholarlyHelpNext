@@ -1,22 +1,15 @@
 "use client";
 
-import { FC, useState } from "react";
-import Logo from "@/app/assets/Icons/Logo";
 import DownArrow from "@/app/assets/Icons/DownArrow";
-import Phone from "@/app/assets/Icons/Phone";
+import Logo from "@/app/assets/Icons/Logo";
 import MenuThreeLines from "@/app/assets/Icons/MenuThreeLines";
+import Phone from "@/app/assets/Icons/Phone";
+import { FC, useState } from "react";
 // import "./index.css";
 import useBreakpoint from "@/app/(pages)/hooks/useMediabreakpoint";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { hideLinks, supportMail, withChatNow } from "../HideLinks/HideLinks";
-import Button from "../Button/Button";
-import Facebook from "@/app/assets/Icons/Facebook";
-import Instagram from "@/app/assets/Images/instagram.png";
-import Linkedin from "@/app/assets/Images/linkedin.png";
-import Tiktok from "@/app/assets/Images/tiktok.png";
-import Image from "next/image";
-import emailIcon from "@/app/assets/Images/emailNav.png";
 interface AppNavProps {}
 const AppNav: FC<AppNavProps> = ({}) => {
   const { breakpoint } = useBreakpoint();
@@ -51,7 +44,56 @@ const AppNav: FC<AppNavProps> = ({}) => {
         </div>
       </div>
     </div>;
-  } else {
+  } else if (withChat) {
+    return (
+      <div>
+        {/* <div className="bg-primary-400">
+          <a href="mailto:support@scholarlyhelp.com" target="_blank">
+            <p className="text-white font-bold text-center py-3">
+              support@scholarlyhelp.com
+            </p>
+          </a>
+        </div> */}
+        <div className="container sm:mx-auto sm:px-0 px-4 flex justify-between py-4 items-center flex-wrap">
+          <div>
+            <Logo />
+          </div>
+          <div className="text-primary-500 font-bold text-center py-3 md:block hidden grow rounded-md mr-2">
+            Get 10% Discount - Limited Time Offer!
+          </div>
+          {/* <div className="flex items-center"> */}
+          {/* <div className="md:text-lg text-sm text-primary-400 mr-2">
+            <a
+              href={`tel:${process.env.NEXT_PUBLIC_COMPANY_PHONE_NUMBER}`}
+              className="flex items-center "
+            >
+              <span className="sm:w-6 w-4 mr-1 text-primary-400">
+                <Phone color="#565add" />
+              </span>
+              1-716-708-1869
+            </a>
+          </div> */}
+          {currentPage !== "/take-my-class/" && (
+            <div className="mr-4">
+              <a
+                href={`tel:${process.env.NEXT_PUBLIC_COMPANY_PHONE_NUMBER}`}
+                className="flex items-center text-primary-400"
+              >
+                <span className="w-6 mr-1 text-primary-400">
+                  <Phone color="#565ADD" />
+                </span>
+                1-716-708-1869
+              </a>
+              {/* <a href="javascript:void(Tawk_API.toggle())">
+              <Button className="md:w-36 w-28 ">Chat Now</Button>
+            </a> */}
+            </div>
+          )}
+          {/* </div> */}
+        </div>
+      </div>
+    );
+  } else if (!hideLink && !withChat) {
     return (
       <div>
         <div className="bg-primary-400 flex justify-center">
@@ -62,10 +104,10 @@ const AppNav: FC<AppNavProps> = ({}) => {
         <div className="overflow-hidden">
           <div className={`flex lg:justify-center bg-white`}>
             {/* <div
-          className={`py-3 px-10 ${
-            breakpoint !== "xxs" && "flex"
-          } justify-between xl:container w-full`}
-        > */}
+            className={`py-3 px-10 ${
+              breakpoint !== "xxs" && "flex"
+            } justify-between xl:container w-full`}
+          > */}
             <div
               className={`py-3 sm:px-10 px-7 flex justify-between xl:container w-full flex-wrap sm:flex-nowrap`}
             >
@@ -133,11 +175,11 @@ const AppNav: FC<AppNavProps> = ({}) => {
                   Samples
                 </Link>
                 {/* <Link
-                  href="/about-us"
-                  className="text-md relative after:content-[''] after:w-[0px] after:h-[4px] after:bg-primary-400 after:block after:transition-all after:duration-500 hover:after:w-[100%]"
-                >
-                  About us
-                </Link> */}
+                    href="/about-us"
+                    className="text-md relative after:content-[''] after:w-[0px] after:h-[4px] after:bg-primary-400 after:block after:transition-all after:duration-500 hover:after:w-[100%]"
+                  >
+                    About us
+                  </Link> */}
                 <Link
                   href="/tools"
                   className="text-md relative after:content-[''] after:w-[0px] after:h-[4px] after:bg-primary-400 after:block after:transition-all after:duration-500 hover:after:w-[100%]"
@@ -160,15 +202,15 @@ const AppNav: FC<AppNavProps> = ({}) => {
                   1-716-708-1869
                 </a>
                 {/* <a
-                  href="mailto:support@scholarlyhelp.com"
-                  target="_blank"
-                  className="flex items-center text-primary-400"
-                >
-                  <span className="w-6 mr-1 text-primary-400">
-                    <Image src={emailIcon} alt="icon" className="w-8" />
-                  </span>
-                  support@scholarlyhelp.com
-                </a> */}
+                    href="mailto:support@scholarlyhelp.com"
+                    target="_blank"
+                    className="flex items-center text-primary-400"
+                  >
+                    <span className="w-6 mr-1 text-primary-400">
+                      <Image src={emailIcon} alt="icon" className="w-8" />
+                    </span>
+                    support@scholarlyhelp.com
+                  </a> */}
               </div>
 
               <div className="flex items-center lg:hidden">
@@ -184,15 +226,15 @@ const AppNav: FC<AppNavProps> = ({}) => {
                       1-716-708-1869
                     </a>
                     {/* <a
-                      href="mailto:support@scholarlyhelp.com"
-                      target="_blank"
-                      className="flex items-center text-primary-400"
-                    >
-                      <span className="sm:w-6 w-4 mr-1 text-primary-400">
-                        <Image src={emailIcon} alt="icon" className="w-8" />
-                      </span>
-                      support@scholarlyhelp.com
-                    </a> */}
+                        href="mailto:support@scholarlyhelp.com"
+                        target="_blank"
+                        className="flex items-center text-primary-400"
+                      >
+                        <span className="sm:w-6 w-4 mr-1 text-primary-400">
+                          <Image src={emailIcon} alt="icon" className="w-8" />
+                        </span>
+                        support@scholarlyhelp.com
+                      </a> */}
                   </div>
                 </div>
                 <div
@@ -279,54 +321,6 @@ const AppNav: FC<AppNavProps> = ({}) => {
               </Link>
             </div>
           </div>
-        </div>
-      </div>
-    );
-  }
-  if (withChat) {
-    return (
-      <div>
-        {/* <div className="bg-primary-400">
-          <a href="mailto:support@scholarlyhelp.com" target="_blank">
-            <p className="text-white font-bold text-center py-3">
-              support@scholarlyhelp.com
-            </p>
-          </a>
-        </div> */}
-        <div className="container sm:mx-auto sm:px-0 px-4 flex justify-between py-4 items-center flex-wrap">
-          <div>
-            <Logo />
-          </div>
-          <div className="text-primary-500 font-bold text-center py-3 md:block hidden grow rounded-md mr-2">
-            Get 10% Discount - Limited Time Offer!
-          </div>
-          {/* <div className="flex items-center"> */}
-          {/* <div className="md:text-lg text-sm text-primary-400 mr-2">
-            <a
-              href={`tel:${process.env.NEXT_PUBLIC_COMPANY_PHONE_NUMBER}`}
-              className="flex items-center "
-            >
-              <span className="sm:w-6 w-4 mr-1 text-primary-400">
-                <Phone color="#565add" />
-              </span>
-              1-716-708-1869
-            </a>
-          </div> */}
-          <div className="mr-4">
-            <a
-              href={`tel:${process.env.NEXT_PUBLIC_COMPANY_PHONE_NUMBER}`}
-              className="flex items-center text-primary-400"
-            >
-              <span className="w-6 mr-1 text-primary-400">
-                <Phone color="#565ADD" />
-              </span>
-              1-716-708-1869
-            </a>
-            {/* <a href="javascript:void(Tawk_API.toggle())">
-              <Button className="md:w-36 w-28 ">Chat Now</Button>
-            </a> */}
-          </div>
-          {/* </div> */}
         </div>
       </div>
     );

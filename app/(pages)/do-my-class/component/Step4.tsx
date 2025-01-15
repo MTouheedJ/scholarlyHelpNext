@@ -125,7 +125,7 @@ const Step4: FC<Step4Props> = ({}) => {
     try {
       await axiosInstance.post(`/order/quote`, fd);
       setWithEmailLoading(false);
-      router.push("/thank-you");
+      router.push("/thank-you-2");
     } catch (error) {
       // @ts-ignore
       setSubmissionErr(error?.response?.data?.message);

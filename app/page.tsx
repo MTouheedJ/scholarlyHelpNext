@@ -1,17 +1,17 @@
+import type { NextPage } from "next";
+import dynamic from "next/dynamic";
+import MainLayout from "./MainLayout";
 import AcademicPartner from "./components/AcademicPartner/AcademicPartner";
-import Hero from "./components/Hero/Hero";
-import Qualities from "./components/Qualities/Qualities";
-import SiteReviews from "./components/SiteReviews/SiteReviews";
+import CustomerReviews from "./components/CustomerReviews/CustomerReviews";
 import ExcellenceProof from "./components/ExcellenceProof/ExcellenceProof";
+import Faq from "./components/Faq/Faq";
+import Hero from "./components/Hero/Hero";
 import Process from "./components/Process/Process";
 import { processContent } from "./components/Process/content";
+import Qualities from "./components/Qualities/Qualities";
 import Samples from "./components/Samples/Samples";
-import CustomerReviews from "./components/CustomerReviews/CustomerReviews";
-import Faq from "./components/Faq/Faq";
-import MainLayout from "./MainLayout";
+import SiteReviews from "./components/SiteReviews/SiteReviews";
 import { content } from "./content";
-import dynamic from "next/dynamic";
-import type { NextPage } from "next";
 
 const WhyScholarly = dynamic(
   () => import("./components/WhyScholarly/WhyScholarly"),
@@ -19,7 +19,6 @@ const WhyScholarly = dynamic(
     ssr: false,
   }
 );
-
 
 const Home: NextPage = () => {
   return (
@@ -53,10 +52,10 @@ const Home: NextPage = () => {
 
 export default Home;
 
-
-export function generateMetadata({}){
-  return{
-    title:"Academic Writing Services | Online Help with Money Back Guarantee - Scholarly Help",
-    description: "Scholarly Help’s academic writing services are both affordable and high-quality. We are reliable online tutors. For higher scores on your tests, homework, and assignments, rely on our subject specialists. We can also assist you with writing an essay."
-  }
+export function generateMetadata({}) {
+  return {
+    title: "Scholarly Help - Academic Writing Services For You",
+    description:
+      "Struggling with online classes, exams, assignments or essays? Scholarly Help provides professional academic writing services tailored to your needs. Get timely, plagiarism-free solutions crafted by experts. Your success starts here!",
+  };
 }

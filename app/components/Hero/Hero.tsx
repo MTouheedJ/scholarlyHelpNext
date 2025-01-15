@@ -1,28 +1,26 @@
 "use client";
 
-import { FC, useState } from "react";
-import BgHeroBoyGirl from "@/app/assets/Images/bgHeroBoyGirl.webp";
-import CurvedArrow from "@/app/assets/Icons/CurvedArrow";
-import Button from "../Button/Button";
 import ChatBubbles from "@/app/assets/Icons/ChatBubbles";
+import CurvedArrow from "@/app/assets/Icons/CurvedArrow";
+import BgHeroBoyGirl from "@/app/assets/Images/bgHeroBoyGirl.webp";
+import { FC, useState } from "react";
+import Button from "../Button/Button";
 
 import useBreakpoint from "@/app/(pages)/hooks/useMediabreakpoint";
+import CalculatorImg from "@/app/assets/Images/calculator-img.webp";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import CalculatorImg from "@/app/assets/Images/calculator-img.webp";
 
 import Confidentiality from "@/app/assets/Icons/Confidentiality";
-import SpamAlert from "@/app/assets/Icons/SpamAlert";
 import Downloads from "@/app/assets/Icons/Downloads";
 import Guarantee from "@/app/assets/Icons/Guarantee";
+import SpamAlert from "@/app/assets/Icons/SpamAlert";
 
 import SamplesHeroImg from "@/app/assets/Images/samplesHeroImg.webp";
 // import Step4 from "@/app/(pages)/do-my-class/component/Step4";
-import PopUpModal from "../PopUpModal/PopUpModal";
-import ContactForm from "../Form/ContactForm";
-import { phoneEmailMsgForm, formFreeQuote } from "../HideLinks/HideLinks";
-import Step4 from "../FreeQuoteForm/Step4";
 import PhoneEmailMsgFrom from "../FreeQuoteForm/PhoneEmailMsgForm";
+import Step4 from "../FreeQuoteForm/Step4";
+import { formFreeQuote, phoneEmailMsgForm } from "../HideLinks/HideLinks";
 
 type Content = {
   heading1?: string;
@@ -53,11 +51,11 @@ const Hero: FC<HeroProps> = ({ content }) => {
           <div className="grid grid-cols-12">
             <div className="xl:col-span-6 lg:col-span-7 col-span-12">
               <div className="text-primary-500 sm:text-5xl text-3xl font-bold">
-                <div>{content.heading1}</div>
-                <div className="sm:mt-6 mt-2 sm:mb-6 mb-2">
+                <h1>{content.heading1}</h1>
+                <h1 className="sm:mt-6 mt-2 sm:mb-6 mb-2">
                   {content.mainHeading}
-                </div>
-                <div>{content.heading2}</div>
+                </h1>
+                <h1>{content.heading2}</h1>
               </div>
               <div className="mt-10 grid grid-cols-12 sm:text-lg">
                 <div className="sm:col-span-6 col-span-12 flex items-center">
@@ -159,7 +157,7 @@ const Hero: FC<HeroProps> = ({ content }) => {
             } mb-9`}
           >
             <div className="w-auto flex">
-              <h3
+              <h1
                 className={`text-primary-500 font-bold ${
                   currentPage !== "/"
                     ? "md:text-5xl text-3xl mb-4"
@@ -167,7 +165,7 @@ const Hero: FC<HeroProps> = ({ content }) => {
                 } mt-2 mr-2`}
               >
                 {content.heading1}
-              </h3>
+              </h1>
               <span className={`${currentPage !== "/" && "hidden"} w-10`}>
                 <CurvedArrow />
               </span>
@@ -177,7 +175,7 @@ const Hero: FC<HeroProps> = ({ content }) => {
                 {content.mainHeading}
               </h1>
               {content.heading2 && (
-                <h3
+                <h1
                   className={`text-primary-500 font-bold ${
                     currentPage !== "/"
                       ? "md:text-5xl text-3xl mt-4"
@@ -185,7 +183,7 @@ const Hero: FC<HeroProps> = ({ content }) => {
                   }`}
                 >
                   {content.heading2}
-                </h3>
+                </h1>
               )}
               <div className={`${!isMobile && "max-w-[520px]"} py-5`}>
                 <div
