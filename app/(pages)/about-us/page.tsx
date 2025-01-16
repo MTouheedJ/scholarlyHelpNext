@@ -1,7 +1,5 @@
-import { FC } from "react";
-import { content } from "./content";
-import Hero from "@/app/components/Hero/Hero";
 import MainLayout from "@/app/MainLayout";
+import { FC } from "react";
 import AboutUs from "./Aboutus";
 // import type { Metadata } from 'next'
 
@@ -23,7 +21,8 @@ export default Page;
 
 export function generateMetadata({}) {
   return {
-    title: "About us | Online Help with Money Back Guarantee - Scholarly Help",
-    description: "Scholarly Help’s academic writing services are both affordable and high-quality. We are reliable online tutors. For higher scores on your tests, homework, and assignments, rely on our subject specialists. We can also assist you with writing an essay."
+    title: "About Scholarly Help | Trusted Academic Assistance Experts",
+    description:
+      "Learn about Scholarly Help's journey, expertise, and dedication to helping students excel. Discover why we're the trusted choice in academics.",
   };
 }

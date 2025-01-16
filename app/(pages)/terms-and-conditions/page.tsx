@@ -1,5 +1,3 @@
-
-
 import { FC } from "react";
 import { content } from "./content";
 import Hero from "@/app/components/Hero/Hero";
@@ -19,7 +17,8 @@ const Page: FC<PageProps> = ({}) => {
 export default Page;
 export function generateMetadata({}) {
   return {
-    title: "Term and Conditions | Online Help with Money Back Guarantee - Scholarly Help",
-    description: "Scholarly Help’s academic writing services are both affordable and high-quality. We are reliable online tutors. For higher scores on your tests, homework, and assignments, rely on our subject specialists. We can also assist you with writing an essay."
+    title: "Terms & Conditions | Scholarly Help Policies and Guidelines",
+    description:
+      "Learn about Scholarly Help's terms and conditions, including service policies, payments, privacy, and usage guidelines. Stay informed today.",
   };
 }

@@ -14,31 +14,49 @@ import MainLayout from "@/app/MainLayout";
 import Subjects from "@/app/components/Subjects/Subjects";
 import dynamic from "next/dynamic";
 
-const WhyScholarly= dynamic(() => import("@/app/components/WhyScholarly/WhyScholarly"), {
-  ssr: false,
-  });
- 
+const WhyScholarly = dynamic(
+  () => import("@/app/components/WhyScholarly/WhyScholarly"),
+  {
+    ssr: false,
+  }
+);
+
 export default function Page() {
   return (
     <MainLayout>
       <Hero content={content.heroContent} />
       <Qualities />
       <SiteReviews />
-      <WhyScholarly header={content.whyScholarly} content={content.whyScholarly.whyScholarlyContent} />
-      <AcademicPartner btnText={content.btnText}  mainHeading={content.academic.mainheading} content={content.academic.academicContent}/>
-      <ExcellenceProof btnText={content.btnText}  content={content.excellenceProofContent} />
+      <WhyScholarly
+        header={content.whyScholarly}
+        content={content.whyScholarly.whyScholarlyContent}
+      />
+      <AcademicPartner
+        btnText={content.btnText}
+        mainHeading={content.academic.mainheading}
+        content={content.academic.academicContent}
+      />
+      <ExcellenceProof
+        btnText={content.btnText}
+        content={content.excellenceProofContent}
+      />
       <Process content={processContent} />
-      <Samples btnText={content.btnText}/>
-      <CustomerReviews btnText={content.btnText}/>
-      <Subjects btnText={content.btnText} mainHeading={content.subjects.mainHeading} content={content.subjects.subjectsContent}/>
+      <Samples btnText={content.btnText} />
+      <CustomerReviews btnText={content.btnText} />
+      <Subjects
+        btnText={content.btnText}
+        mainHeading={content.subjects.mainHeading}
+        content={content.subjects.subjectsContent}
+      />
       <Faq content={content.faqContent} />
     </MainLayout>
   );
-};
+}
 
 export function generateMetadata({}) {
   return {
-    title: "Take My Online Accounting Class - Scholarly Help",
-    description: "Can I hire someone to take an online accounting class for me? Ask Scholarly Help for the ultimate assistance and get your work done in a flash."
+    title: "Take My Online Accounting Class | Reliable Accounting Class Help",
+    description:
+      "Need someone to handle your online accounting class? Pay for reliable class help and achieve stress-free results.",
   };
 }
