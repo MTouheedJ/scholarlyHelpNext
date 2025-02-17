@@ -1,8 +1,5 @@
-
-import { FC } from "react";
-import { content } from "./content";
-import Hero from "@/app/components/Hero/Hero";
 import MainLayout from "@/app/MainLayout";
+import { FC } from "react";
 // import TermsConditons from "./termsConditons";
 import Privacy from "./Privacy";
 
@@ -19,6 +16,8 @@ export default Page;
 
 export function generateMetadata({}) {
   return {
-    title: "Privacy | Online Help with Money Back Guarantee - Scholarly Help",
+    title: "Privacy Policy | Scholarly Help",
+    description:
+      "Learn how Scholarly Help safeguards your personal data. Read our privacy policy to understand our commitment to data protection, security, and transparency.",
   };
 }

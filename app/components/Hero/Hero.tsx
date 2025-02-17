@@ -18,6 +18,7 @@ import SpamAlert from "@/app/assets/Icons/SpamAlert";
 
 import SamplesHeroImg from "@/app/assets/Images/samplesHeroImg.webp";
 // import Step4 from "@/app/(pages)/do-my-class/component/Step4";
+import yellowEnvalop from "@/app/assets/Images/yellowEnvalop.png";
 import PhoneEmailMsgFrom from "../FreeQuoteForm/PhoneEmailMsgForm";
 import Step4 from "../FreeQuoteForm/Step4";
 import { formFreeQuote, phoneEmailMsgForm } from "../HideLinks/HideLinks";
@@ -205,28 +206,29 @@ const Hero: FC<HeroProps> = ({ content }) => {
                 </div>
               )} */}
               <div className="flex justify-center md:justify-start">
-                {freeQuotephoneEmailMsg ? (
-                  <PhoneEmailMsgFrom />
-                ) : (
-                  <>
-                    {!freeQuoteForm ? (
-                      <Step4 />
-                    ) : (
-                      <a href="javascript:void(Tawk_API.toggle())">
-                        <Button
-                          type="submit"
-                          className="md:w-[240px] w-[180px] flex justify-evenly md:px-16 px-10"
-                        >
-                          <span className="w-5">
-                            <ChatBubbles />
-                          </span>
-                          Live Chat
-                        </Button>
-                      </a>
-                    )}
-                  </>
-                )}
-                {/* <Button
+                <div>
+                  {freeQuotephoneEmailMsg ? (
+                    <PhoneEmailMsgFrom />
+                  ) : (
+                    <>
+                      {!freeQuoteForm ? (
+                        <Step4 />
+                      ) : (
+                        <a href="javascript:void(Tawk_API.toggle())">
+                          <Button
+                            type="submit"
+                            className="md:w-[240px] w-[180px] flex justify-evenly md:px-16 px-10"
+                          >
+                            <span className="w-5">
+                              <ChatBubbles />
+                            </span>
+                            Live Chat
+                          </Button>
+                        </a>
+                      )}
+                    </>
+                  )}
+                  {/* <Button
                   className="md:w-[240px] w-[180px] flex justify-evenly md:px-16 px-10"
                   onClick={handleModel}
                 >
@@ -235,6 +237,17 @@ const Hero: FC<HeroProps> = ({ content }) => {
                   </span>
                   Live Chat
                 </Button> */}
+                  <div className="w-[80%] mx-auto bg-[#2B1C50] p-5 rounded-b-lg">
+                    <div className="flex justify-center items-center mx-auto gap-3">
+                      <Image src={yellowEnvalop} alt="" />
+                      <p className="text-sm font-semibold text-white">
+                        Check Spam / Junk If You Don’t
+                        <br />
+                        See Our Email Within Minutes
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

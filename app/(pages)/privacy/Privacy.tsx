@@ -1,9 +1,8 @@
 "use client";
 
-import { FC, useState } from "react";
-import Image from "next/image";
 import AboutUsImg from "@/app/assets/Images/aboutusImg.webp";
-import Link from "next/link";
+import Image from "next/image";
+import { FC } from "react";
 
 interface PrivacyProps {}
 const Privacy: FC<PrivacyProps> = ({}) => {
@@ -14,9 +13,9 @@ const Privacy: FC<PrivacyProps> = ({}) => {
           <Image src={AboutUsImg} alt="image" className="max-w-80" />
         </div>
         <div className="my-4 ">
-          <p className="text-center md:text-5xl text-2xl font-bold text-primary-500">
+          <h1 className="text-center md:text-5xl text-2xl font-bold text-primary-500">
             Privacy Policy
-          </p>
+          </h1>
         </div>
       </div>
       <div className="sm:px-20 px-10 pt-16 pb-20">

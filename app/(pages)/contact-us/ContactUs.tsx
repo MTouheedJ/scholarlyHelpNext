@@ -1,15 +1,15 @@
 "use client";
 
-import { FC, useState } from "react";
-import Image from "next/image";
-import AboutUsImg from "@/app/assets/Images/aboutusImg.webp";
-import CustomerCareIcon from "@/app/assets/Images/customercare.webp";
-import EmailIcon from "@/app/assets/Images/contactEmail.webp";
-import PhoneIcon from "@/app/assets/Images/tollFree.webp";
 import Facebook from "@/app/assets/Icons/Facebook";
+import AboutUsImg from "@/app/assets/Images/aboutusImg.webp";
+import EmailIcon from "@/app/assets/Images/contactEmail.webp";
+import CustomerCareIcon from "@/app/assets/Images/customercare.webp";
 import Instagram from "@/app/assets/Images/instagram.webp";
 import Linkedin from "@/app/assets/Images/linkedIn.webp";
 import Tiktok from "@/app/assets/Images/tiktok.webp";
+import PhoneIcon from "@/app/assets/Images/tollFree.webp";
+import Image from "next/image";
+import { FC } from "react";
 
 interface ContactUsProps {}
 const ContactUs: FC<ContactUsProps> = ({}) => {
@@ -20,9 +20,9 @@ const ContactUs: FC<ContactUsProps> = ({}) => {
           <Image src={AboutUsImg} alt="image" className="max-w-80" />
         </div>
         <div className="my-4 ">
-          <p className="text-center md:text-5xl text-2xl font-bold text-primary-500">
+          <h1 className="text-center md:text-5xl text-2xl font-bold text-primary-500">
             Contact Us
-          </p>
+          </h1>
         </div>
       </div>
       <div className="sm:container sm:mx-auto mx-10 pt-16 pb-20">

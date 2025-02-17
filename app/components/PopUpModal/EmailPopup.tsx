@@ -55,8 +55,8 @@ const EmailPopup: FC<EmailPopupProps> = ({ open, handleClose }) => {
       showCloseIcon={false}
       open={open}
       onClose={handleClose}
-      closeOnOverlayClick={true}
-      closeOnEsc={true}
+      closeOnOverlayClick={false}
+      closeOnEsc={false}
       center
       classNames={{ modalContainer: "bg-[#ffffffcf]" }}
       styles={{

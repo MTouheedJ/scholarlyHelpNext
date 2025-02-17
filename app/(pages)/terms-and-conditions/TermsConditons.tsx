@@ -1,9 +1,9 @@
 "use client";
 
-import { FC, useState } from "react";
-import Image from "next/image";
 import AboutUsImg from "@/app/assets/Images/aboutusImg.webp";
+import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 
 interface TermsConditonsProps {}
 const TermsConditons: FC<TermsConditonsProps> = ({}) => {
@@ -14,9 +14,9 @@ const TermsConditons: FC<TermsConditonsProps> = ({}) => {
           <Image src={AboutUsImg} alt="image" className="max-w-80" />
         </div>
         <div className="my-4 ">
-          <p className="text-center md:text-5xl text-2xl font-bold text-primary-500">
+          <h1 className="text-center md:text-5xl text-2xl font-bold text-primary-500">
             Terms And Conditions
-          </p>
+          </h1>
         </div>
       </div>
       <div className="sm:px-20 px-10 pt-16 pb-20">
@@ -37,15 +37,16 @@ const TermsConditons: FC<TermsConditonsProps> = ({}) => {
           <Link className="underline text-primary-400" href="/privacy">
             privacy policy
           </Link>
-          . If you do not agree to these terms and conditions, you won&apos;t be able
-          to access or utilize this website&apos;s services.
+          . If you do not agree to these terms and conditions, you won&apos;t be
+          able to access or utilize this website&apos;s services.
         </p>
         <p className="leading-7 pt-4">
           In these terms and conditions and the privacy policy, specific
-          terminology such as &apos;User,&apos; &apos;Client,&apos; &apos;You,&apos; and &apos;Your&apos; refers to
-          visitors, users, and those accessing the website. On the other hand,
-          terms like &apos;We,&apos; &apos;Us,&apos; and &apos;Our&apos; are used to denote Scholarly Help or
-          the website itself.
+          terminology such as &apos;User,&apos; &apos;Client,&apos;
+          &apos;You,&apos; and &apos;Your&apos; refers to visitors, users, and
+          those accessing the website. On the other hand, terms like
+          &apos;We,&apos; &apos;Us,&apos; and &apos;Our&apos; are used to denote
+          Scholarly Help or the website itself.
         </p>
         <p className="leading-7 pt-4 font-semibold text-primary-500">
           Services Provided
@@ -138,9 +139,9 @@ const TermsConditons: FC<TermsConditonsProps> = ({}) => {
           Limitations of Liability
         </p>
         <p className="leading-7">
-          Scholarly Help&apos;s responsibility is to deliver work within deadlines
-          and assist in achieving committed grades. We are not liable for any
-          error or miscommunication from the user’s side.
+          Scholarly Help&apos;s responsibility is to deliver work within
+          deadlines and assist in achieving committed grades. We are not liable
+          for any error or miscommunication from the user’s side.
         </p>
 
         <p className="leading-7 pt-4 font-semibold text-primary-500">
@@ -156,9 +157,9 @@ const TermsConditons: FC<TermsConditonsProps> = ({}) => {
           Copyrights
         </p>
         <p className="leading-7">
-          Final drafts become the user&apos;s property upon delivery. The delivered
-          paper is for personal use and may be submitted for assignments or used
-          as an exam guide.
+          Final drafts become the user&apos;s property upon delivery. The
+          delivered paper is for personal use and may be submitted for
+          assignments or used as an exam guide.
           <br />
           Copying, sharing, or distributing the paper to third parties without
           user consent is prohibited.

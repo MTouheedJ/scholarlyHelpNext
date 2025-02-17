@@ -1,8 +1,8 @@
 "use client";
 
-import { FC, useState } from "react";
-import Image from "next/image";
 import AboutUsImg from "@/app/assets/Images/aboutusImg.webp";
+import Image from "next/image";
+import { FC } from "react";
 
 interface AboutUsProps {}
 const AboutUs: FC<AboutUsProps> = ({}) => {
@@ -13,9 +13,9 @@ const AboutUs: FC<AboutUsProps> = ({}) => {
           <Image src={AboutUsImg} alt="image" className="max-w-80" />
         </div>
         <div className="my-4 ">
-          <p className="text-center text-5xl font-bold text-primary-500">
+          <h1 className="text-center text-5xl font-bold text-primary-500">
             About Us
-          </p>
+          </h1>
         </div>
       </div>
       <div className="px-20 pt-16 pb-20">
