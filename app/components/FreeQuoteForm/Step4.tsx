@@ -151,7 +151,7 @@ const Step4: FC<Step4Props> = ({ text }) => {
     try {
       await axiosInstance.post(`/order/quote`, fd);
       setWithEmailLoading(false);
-      // router.push("/thank-you-2/");
+      router.push("/thank-you-2/");
     } catch (error) {
       // @ts-ignore
       alert(error?.response?.data?.message);

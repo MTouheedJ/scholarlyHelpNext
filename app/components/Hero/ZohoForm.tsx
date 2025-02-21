@@ -65,13 +65,16 @@ const ZohoForm = () => {
   };
 
   return (
-    <div className="bg-white text-black p-5 rounded-lg shadow-md w-full">
+    <div className="bg-white text-black px-5 pb-4 pt-2 rounded-lg shadow-md w-full">
+      {currentPage === "/savemytime/" && (
+        <p className="font-bold text-sm py-1">Download your free guide</p>
+      )}
       <form
         id="webform5887452000002483064"
         action="https://crm.zoho.com/crm/WebToLeadForm"
         method="POST"
         onSubmit={handleSubmit}
-        className="flex flex-col items-start gap-4 sm:w-full"
+        className="flex flex-col items-start gap-4 sm:w-full pt-2"
       >
         {/* Hidden Inputs */}
         <input

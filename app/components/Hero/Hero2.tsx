@@ -39,9 +39,9 @@ const Hero2: FC<HeroProps> = ({ content }) => {
       >
         <div className="xl:container xl:px-10 grid lg:grid-cols-2">
           <div
-            className={`xl:py-12 lg:pt-20 lg:pb-4 lg:w-full ${
-              !isMobile && "w-[400px]"
-            } mb-9`}
+            className={`xl:py-12 lg:pt-20 lg:pb-4 ${
+              currentPage === "/savemytime/" ? "lg:w-[90%]" : "lg:w-full"
+            } ${!isMobile && "w-[400px]"} mb-9`}
           >
             <div className="w-auto flex">
               <h1
