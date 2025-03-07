@@ -24,7 +24,7 @@ export const hideWhatsappModule = [
   "/pay-for-someone-to-write-my-paper/",
 ];
 // export const hideTalktoModule = ["/pay-for-someone-to-write-my-paper/"];
-export const hideTalktoModule = ["/take-my-class/"];
+export const hideTalktoModule = ["/take-my-class/", "/savemytime/", "/scan/"];
 export const withChatNow = ["/do-my-class/"];
 
 export const wholeFromFreeQuote = [
@@ -62,6 +62,7 @@ export const supportMail = [
 export const sms = [
   "/take-my-class/",
   "/do-my-class-1/",
+  "/savemytime/",
   // "/take-my-exam/",
   // "/do-my-exam/",
   // "/take-my-proctored-exam-for-me/",

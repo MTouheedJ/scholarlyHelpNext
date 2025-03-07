@@ -208,7 +208,7 @@ const Inbox: FC<InboxProps> = ({}) => {
   };
   return (
     <>
-      <div className="h-[89vh] flex flex-col justify-between">
+      <div className="h-[80vh] flex flex-col justify-between">
         <div
           className="h-[77vh] overflow-auto scrollbar-hide"
           ref={chatContainerRef}

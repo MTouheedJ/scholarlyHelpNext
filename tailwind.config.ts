@@ -36,6 +36,7 @@ const config: Config = {
         },
         secondary: {
           200: "#F2E0C7",
+          400: "#f97316",
           500: "#ff641a", //original
         },
       },

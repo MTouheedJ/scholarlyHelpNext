@@ -38,12 +38,14 @@
 
 // import Excercise from "./components/Excercise";
 // import Excercise from "./excercise/components/Excercise";
+import AppNav from "@/app/components/NavBar/AppNav";
 import Scan from "@/app/layouts/Scan";
 import NewLayoutExcercise from "./excercise/components/NewLayoutExcercise";
 
 const page = () => {
   return (
     <Scan hideFooter hideHeader>
+      <AppNav />
       {/* <Excercise /> */}
       <NewLayoutExcercise />
     </Scan>

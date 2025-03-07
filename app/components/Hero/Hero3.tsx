@@ -1,10 +1,14 @@
 "use client";
+import useBreakpoint from "@/app/(pages)/hooks/useMediabreakpoint";
 import heroBg from "@/app/assets/Images/hero3Bg.png";
+import heroBg2 from "@/app/assets/Images/hero3Bg2.png";
 import axiosInstance from "@/app/axios";
 import { isEmailValid } from "@/app/utilities/utilities";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 import { ColorRing } from "react-loader-spinner";
+
 interface Hero3Props {}
 
 const Hero3: FC<Hero3Props> = () => {
@@ -15,6 +19,7 @@ const Hero3: FC<Hero3Props> = () => {
   const [GCLID, setGCLID] = useState("");
   const [wholeUrl, setWholeUrl] = useState<string>("");
 
+  const { isMobile } = useBreakpoint();
   const currentPage = usePathname();
   const router = useRouter();
 
@@ -75,35 +80,34 @@ const Hero3: FC<Hero3Props> = () => {
 
   return (
     <div
-      className="px-[90px] h-[690px] bg-no-repeat bg-center bg-cover"
+      className="lg:px-[90px] px-[42px] lg:h-[675px] bg-no-repeat bg-center bg-cover lg:pt-0 pt-5"
       style={{
-        backgroundImage: `url(${heroBg.src})`,
+        backgroundImage: `${isMobile ? "none" : `url(${heroBg.src})`}`,
       }}
     >
       <div className="container mx-auto  flex flex-col justify-center h-full">
-        <div className="max-w-[550px]">
-          <h1 className="text-[31px] font-medium text-primary-500 mb-7">
-            You’re about to get{" "}
-            <span className="text-[38px] font-semibold text-secondary-500">
-              40+ hours
+        <div className="lg:max-w-[550px]">
+          <h1 className="lg:text-[31px] sm:text-2xl text-xl font-medium text-primary-500 sm:mb-7 mb-4 lg:leading-[42px]">
+            Reclaim{" "}
+            <span className="lg:text-[38px] sm:text-3xl text-2xl font-semibold text-secondary-500">
+              40+ Hours a Month!
             </span>{" "}
-            back each month by letting an expert handle your{" "}
-            <span className="text-primary-400 font-semibold">
-              Online Classes
-            </span>
+            We&#39;ll Handle Your{" "}
+            <span className="text-primary-400 font-semibold">Classes</span>{" "}
+            While You Start a Profitable Business
           </h1>
-          <p className="text-[31px] font-medium text-primary-500 mb-[30px]">
-            I’ve put together a quick guide on{" "}
-            <span className="bg-primary-400 pt-[2px] pb-[6px] px-[15px] rounded-[6px] text-white text-[28px] font-medium">
-              5 profitable side hassles
+          <p className="lg:text-[31px] sm:text-2xl text-xl font-medium text-primary-500 mb-[30px] lg:leading-[42px]">
+            Here&#39;s 5 Profitable Business Ideas You Can Launch By Saving Your{" "}
+            <br className="lg:block sm:hidden" />
+            <span className="bg-primary-400 pt-[5px] pb-[6px] px-2 rounded-[6px] text-white lg:text-[28px] sm:text-xl text-lg font-medium">
+              40 Hours
             </span>{" "}
-            you can start with those saved hours.
           </p>
           <form
             onSubmit={handleEmailSubmission}
-            className="w-full flex items-center gap-2"
+            className="w-full sm:flex items-center gap-2"
           >
-            <div className="w-[286px] h-[57px] border border-[#919191] rounded-[5px] flex items-center px-4">
+            <div className="sm:w-[286px] h-[57px] border border-[#919191] rounded-[5px] flex items-center px-4">
               <input
                 type="email"
                 value={email}
@@ -118,7 +122,7 @@ const Hero3: FC<Hero3Props> = () => {
             <button
               type="submit"
               disabled={emailLoading}
-              className="bg-secondary-500 text-[15px] font-bold text-white uppercase rounded-[5px] w-[254px] h-[54px] flex justify-center items-center"
+              className="bg-secondary-500 text-[15px] sm:font-bold font-semibold text-white uppercase rounded-[5px] sm:w-[254px] w-[280px] h-[54px] flex justify-center items-center sm:mt-0 mt-2"
             >
               {emailLoading ? (
                 <ColorRing
@@ -133,6 +137,13 @@ const Hero3: FC<Hero3Props> = () => {
             </button>
           </form>
           {emailErr && <p className="text-red-500 text-sm">{emailErr}</p>}
+        </div>
+        <div className="lg:hidden w-full flex justify-center mt-5">
+          <Image
+            src={heroBg2}
+            alt="savemytime"
+            className="sm:max-w-[400px] max-w-[300px]"
+          />
         </div>
       </div>
     </div>
