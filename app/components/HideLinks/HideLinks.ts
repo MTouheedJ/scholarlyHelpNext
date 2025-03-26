@@ -24,7 +24,7 @@ export const hideWhatsappModule = [
   "/pay-for-someone-to-write-my-paper/",
 ];
 // export const hideTalktoModule = ["/pay-for-someone-to-write-my-paper/"];
-export const hideTalktoModule = ["/take-my-class/", "/savemytime/", "/scan/"];
+export const hideTalktoModule = ["/savemytime/", "/scan/"];
 export const withChatNow = ["/do-my-class/"];
 
 export const wholeFromFreeQuote = [

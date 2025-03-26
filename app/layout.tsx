@@ -1,15 +1,12 @@
 "use client";
 
-import { Inter } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Poppins } from "next/font/google";
-import "./globals.css";
-import Script from "next/script";
-import Head from "next/head"; // Import Head from next/head
 import { usePathname } from "next/navigation";
+import Script from "next/script";
 import { hideTalktoModule } from "./components/HideLinks/HideLinks";
 import Schemas from "./faqSchemaContent.json";
-import AuthProvider from "./(pages)/scan/contexts/Auth/Auth";
-import { GoogleTagManager } from "@next/third-parties/google";
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -94,6 +91,19 @@ export default function RootLayout({
                     });
                   };
                 `,
+              }}
+            ></Script>
+            <Script
+              id="tawk-chat-started"
+              dangerouslySetInnerHTML={{
+                __html: `
+          var Tawk_API = Tawk_API || {};
+          Tawk_API.onChatStarted = function() {
+            dataLayer.push({
+              event: 'chat_started'
+            });
+          };
+        `,
               }}
             ></Script>
           </>

@@ -15,7 +15,9 @@ export const content = {
   btnText: "Take my online class",
   heroContent: {
     heading1: "",
-    mainHeading: `Stop Sacrificing Your Time – Let Us Manage Your Online Classes While You Grow Your Career
+    mainHeading: `Stop Sacrificing Your Time
+Let Us Manage Your Online
+Classes While You Grow Your Career
 `,
     heading2: "",
     description:

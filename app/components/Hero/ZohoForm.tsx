@@ -2,9 +2,12 @@
 
 import axiosInstance from "@/app/axios";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
-const ZohoForm = () => {
+interface ZohoFormProps {
+  nameValue: string;
+}
+const ZohoForm: FC<ZohoFormProps> = ({ nameValue }) => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [FBCLID, setFBCLID] = useState("");
@@ -94,7 +97,7 @@ const ZohoForm = () => {
           name="returnURL"
           value="https://scholarlyhelp.com/thank-you-2/"
         />
-        <input type="hidden" name="Last Name" value="DefaultLastName" />
+        <input type="hidden" name={nameValue} value="DefaultLastName" />
 
         {/* Email Field */}
         <div className="sm:w-full sm:flex items-center border-2 border-[#c1c1c1] rounded-lg p-2 bg-white">

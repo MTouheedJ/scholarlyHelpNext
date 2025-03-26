@@ -7,7 +7,8 @@ import { isEmailValid } from "@/app/utilities/utilities";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
-import { ColorRing } from "react-loader-spinner";
+// import { ColorRing } from "react-loader-spinner";
+import ZohoForm from "./ZohoForm";
 
 interface Hero3Props {}
 
@@ -103,7 +104,8 @@ const Hero3: FC<Hero3Props> = () => {
               40 Hours
             </span>{" "}
           </p>
-          <form
+          <ZohoForm nameValue="Last Name" />
+          {/* <form
             onSubmit={handleEmailSubmission}
             className="w-full sm:flex items-center gap-2"
           >
@@ -135,7 +137,7 @@ const Hero3: FC<Hero3Props> = () => {
                 "Download your free guide"
               )}
             </button>
-          </form>
+          </form> */}
           {emailErr && <p className="text-red-500 text-sm">{emailErr}</p>}
         </div>
         <div className="lg:hidden w-full flex justify-center mt-5">

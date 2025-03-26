@@ -8,7 +8,7 @@ import { isEmailValid } from "@/app/utilities/utilities";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
-import { ColorRing } from "react-loader-spinner";
+import ZohoForm from "./ZohoForm";
 
 interface Hero4Props {}
 
@@ -104,8 +104,9 @@ const Hero4: FC<Hero4Props> = () => {
               20% discount!
             </span>
           </p>
+
           <div className="max-w-[470px] ">
-            <form
+            {/* <form
               onSubmit={handleEmailSubmission}
               className="w-full py-4 px-5 bg-white rounded-md shadow-md"
             >
@@ -138,7 +139,8 @@ const Hero4: FC<Hero4Props> = () => {
                 </button>
               </div>
               {emailErr && <p className="text-red-500 text-sm">{emailErr}</p>}
-            </form>
+            </form> */}
+            <ZohoForm nameValue="Last Name" />
             <div className="w-[80%] mx-auto bg-[#2B1C50] p-5 rounded-b-lg">
               <div className="flex justify-center items-center mx-auto gap-3">
                 <Image src={yellowEnvalop} alt="" />
