@@ -46,6 +46,7 @@ const Inbox: FC<InboxProps> = ({}) => {
       setShowEmailPopup(false);
     }
   }, [emailDialogues]);
+
   useEffect(() => {
     if (chatContainerRef.current) {
       setTimeout(() => {
@@ -75,7 +76,6 @@ const Inbox: FC<InboxProps> = ({}) => {
         const response = await axiosInstance.get(
           `/scan-to-solve/email-popup-status/local/${localUserId}`
         );
-        console.log("here");
 
         setEmailDialogues(response.data.showEmailPopup);
       } catch (err) {
@@ -121,16 +121,11 @@ const Inbox: FC<InboxProps> = ({}) => {
     event.preventDefault();
 
     if (!text && !uploadedImage) {
-      setTextError("Please add an image and some description");
+      setTextError("Please add a description or an image");
       return;
-    }
-    if (!text) {
-      setTextError("Please add description");
-      return;
-    }
-    if (!uploadedImage) {
-      setImageError("Please add an image");
-      return;
+    } else {
+      setTextError("");
+      setImageError("");
     }
 
     const userMessage: Response = {
@@ -157,10 +152,13 @@ const Inbox: FC<InboxProps> = ({}) => {
     setResData((prevData) => [...prevData, userMessage, botPlaceholder]);
 
     const fd = new FormData();
-    fd.append("image", uploadedImage);
-    fd.append("query", text);
     fd.append("localUserId", localUserId!);
-
+    if (uploadedImage) {
+      fd.append("image", uploadedImage);
+    }
+    if (text) {
+      fd.append("query", text);
+    }
     setUploadedImage(null);
     setText("");
     setFileName("");
@@ -223,12 +221,14 @@ const Inbox: FC<InboxProps> = ({}) => {
                       {formatTime(data.createdAt)}
                     </p>
                     <div className="bg-[#F8F8F8] p-4 rounded-lg text-[#444746] text-[13px] w-fit">
-                      <img
-                        src={data.imageUrl || "/default-placeholder.png"}
-                        alt="Uploaded Preview"
-                        className="w-[200px] h-auto rounded mb-3"
-                      />
-                      <p>{data.query}</p>
+                      {data.imageUrl && (
+                        <img
+                          src={data.imageUrl || "/default-placeholder.png"}
+                          alt="Uploaded Preview"
+                          className="w-[200px] h-auto rounded mb-3"
+                        />
+                      )}
+                      {data.query && <p>{data.query}</p>}
                     </div>
                   </div>
                   <div className="pt-8">

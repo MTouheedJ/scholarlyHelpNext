@@ -1,6 +1,8 @@
 "use client";
 
-import { FC, useState } from "react";
+import axiosInstance from "@/app/axios";
+import { usePathname } from "next/navigation";
+import React, { FC, useEffect, useState } from "react";
 import { IoIosMail } from "react-icons/io";
 import { IoChatbubbles } from "react-icons/io5";
 import { MdPhoneInTalk } from "react-icons/md";
@@ -16,6 +18,28 @@ const ZohoForm2: FC<ZohoForm2Props> = ({ nameValue }) => {
     Phone: "",
     Description: "",
   });
+  // const [email, setEmail] = useState("");
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  const [FBCLID, setFBCLID] = useState("");
+  const [GCLID, setGCLID] = useState("");
+  const [wholeUrl, setWholeUrl] = useState<string>("");
+  const currentPage = usePathname();
+  useEffect(() => {
+    if (window.location) {
+      setWholeUrl(window.location.href);
+    } else {
+      setWholeUrl(currentPage);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window?.location?.href?.includes("fbclid=")) {
+      setFBCLID(window?.location?.href);
+    }
+    if (window?.location?.href?.includes("gclid=")) {
+      setGCLID(window?.location?.href);
+    }
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -48,11 +72,33 @@ const ZohoForm2: FC<ZohoForm2Props> = ({ nameValue }) => {
     return validateEmail();
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (checkMandatory()) {
       const form = e.target as HTMLFormElement;
       const submitButton = form.querySelector(".formsubmit");
+      const fd = new FormData();
+      if (FBCLID) {
+        fd.append("fbclid", FBCLID);
+      }
+      if (GCLID) {
+        fd.append("gclid", GCLID);
+      }
+      fd.append("url", wholeUrl);
+      fd.append("email", formData.Email);
+      if (formData.Phone) {
+        fd.append("phone_number", formData.Phone);
+      }
+      if (formData.Description) {
+        fd.append("instructions", formData.Description);
+      }
+
+      try {
+        const res = await axiosInstance.post(`/order/quote`, fd);
+        form.submit();
+      } catch (error) {
+        alert("Failed to send request try again later");
+      }
       if (submitButton) {
         submitButton.setAttribute("disabled", "true");
       }
@@ -110,8 +156,8 @@ const ZohoForm2: FC<ZohoForm2Props> = ({ nameValue }) => {
         <div className="hidden items-center border border-[#49498B] divide-[#49498B] divide-x gap-3 rounded p-3">
           <input
             type="text"
-            id="Last_Name"
-            name="Last_Name"
+            id="Last Name"
+            name="Last Name"
             value="DefaultLastName"
             readOnly
             className="focus:outline-none flex-grow bg-transparent pl-3 placeholder-white text-[13px] text-white"
@@ -125,10 +171,11 @@ const ZohoForm2: FC<ZohoForm2Props> = ({ nameValue }) => {
             type="text"
             id="Phone"
             name="Phone"
-            placeholder="Phone # (Optional)"
+            placeholder="Phone # *"
             value={formData.Phone}
             onChange={handleChange}
             maxLength={30}
+            required
             className="focus:outline-none flex-grow bg-primary-500 pl-3 placeholder-white text-[13px] text-white"
           />
         </div>
@@ -140,10 +187,11 @@ const ZohoForm2: FC<ZohoForm2Props> = ({ nameValue }) => {
           <textarea
             id="Description"
             name="Description"
-            placeholder="What do you need help with (Optional)"
+            placeholder="What do you need help with *"
             rows={4}
             value={formData.Description}
             onChange={handleChange}
+            required
             className="focus:outline-none flex-grow bg-primary-500 placeholder-white text-[13px] text-white resize-none"
           />
         </div>
@@ -158,9 +206,9 @@ const ZohoForm2: FC<ZohoForm2Props> = ({ nameValue }) => {
           </button> */}
           <button
             type="submit"
-            className="h-[46px] w-full bg-white rounded flex justify-center items-center"
+            className="h-[46px] w-full bg-white rounded flex justify-center items-center uppercase"
           >
-            Submit
+            Get My Free Quote
           </button>
         </div>
       </form>

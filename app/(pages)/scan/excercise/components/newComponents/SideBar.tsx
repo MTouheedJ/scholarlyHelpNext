@@ -1,18 +1,37 @@
+import useBreakpoint from "@/app/(pages)/hooks/useMediabreakpoint";
 import HowItWorkIcon from "@/app/assets/Icons/howItWork.png";
 import SubscriptionIcon from "@/app/assets/Icons/subcriptionIcon.png";
 import ScanLogo from "@/app/assets/Images/ScanToSolve.png";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoLogOutOutline } from "react-icons/io5";
+import { MdOutlineCancel } from "react-icons/md";
+import { SidebarType } from "../NewLayoutExcercise";
+interface SideBarProps {
+  openSidebar: SidebarType;
+  setOpenSidebar: Dispatch<SetStateAction<SidebarType>>;
+}
 
-interface SideBarProps {}
-
-const SideBar: FC<SideBarProps> = ({}) => {
+const SideBar: FC<SideBarProps> = ({ openSidebar, setOpenSidebar }) => {
+  const { isMobile } = useBreakpoint();
   const [howWork, setHowWork] = useState<boolean>(false);
+
+  const handleSidebar = () => {
+    setOpenSidebar({ flag: false, isOpen: "close" });
+  };
   return (
-    <div className="bg-[#F7F9FC] w-full h-screen py-9">
-      <div className="mx-auto w-[77%] h-full flex flex-col justify-between">
+    <div className="bg-[#F7F9FC] w-full h-screen pb-9 pt-2">
+      <div
+        className={`${
+          openSidebar.flag
+            ? "flex justify-end px-7 text-primary-400 text-lg"
+            : "hidden"
+        } `}
+      >
+        <MdOutlineCancel onClick={handleSidebar} />
+      </div>
+      <div className="mx-auto w-[77%] h-full flex flex-col justify-between pt-6">
         <div>
           <Image src={ScanLogo} alt="" />
           <div className="mt-8">
