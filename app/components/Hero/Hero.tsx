@@ -1,10 +1,8 @@
 "use client";
 
-import ChatBubbles from "@/app/assets/Icons/ChatBubbles";
 import CurvedArrow from "@/app/assets/Icons/CurvedArrow";
 import BgHeroBoyGirl from "@/app/assets/Images/bgHeroBoyGirl.webp";
 import { FC, useState } from "react";
-import Button from "../Button/Button";
 
 import useBreakpoint from "@/app/(pages)/hooks/useMediabreakpoint";
 import CalculatorImg from "@/app/assets/Images/calculator-img.webp";
@@ -18,10 +16,8 @@ import SpamAlert from "@/app/assets/Icons/SpamAlert";
 
 import SamplesHeroImg from "@/app/assets/Images/samplesHeroImg.webp";
 // import Step4 from "@/app/(pages)/do-my-class/component/Step4";
-import yellowEnvalop from "@/app/assets/Images/yellowEnvalop.png";
-import PhoneEmailMsgFrom from "../FreeQuoteForm/PhoneEmailMsgForm";
-import Step4 from "../FreeQuoteForm/Step4";
 import { formFreeQuote, phoneEmailMsgForm } from "../HideLinks/HideLinks";
+import ZohoForm2 from "./ZohoForm2";
 
 type Content = {
   heading1?: string;
@@ -192,21 +188,11 @@ const Hero: FC<HeroProps> = ({ content }) => {
                   dangerouslySetInnerHTML={{ __html: content.description }}
                 ></div>
               </div>
-              {/* {currentPage === "/take-my-class/" && (
-                <div className="mb-3">
-                  <p className="font-bold md:text-lg">
-                    100% Money-Back Guarantee:{" "}
-                    <span className="font-normal">
-                      Not satisfied with your grades?
-                    </span>
-                    <br />
-                    Get a full refund—
-                    <span className="font-normal">no questions asked.</span>
-                  </p>
-                </div>
-              )} */}
               <div className="flex justify-center md:justify-start">
-                <div>
+                <div className="sm:w-[70%] w-full">
+                  <ZohoForm2 />
+                </div>
+                {/* <div>
                   {freeQuotephoneEmailMsg ? (
                     <PhoneEmailMsgFrom />
                   ) : (
@@ -228,15 +214,7 @@ const Hero: FC<HeroProps> = ({ content }) => {
                       )}
                     </>
                   )}
-                  {/* <Button
-                  className="md:w-[240px] w-[180px] flex justify-evenly md:px-16 px-10"
-                  onClick={handleModel}
-                >
-                  <span className="w-5">
-                    <ChatBubbles />
-                  </span>
-                  Live Chat
-                </Button> */}
+
                   <div className="w-[80%] mx-auto bg-[#2B1C50] p-5 rounded-b-lg">
                     <div className="flex justify-center items-center mx-auto gap-3">
                       <Image src={yellowEnvalop} alt="" />
@@ -247,7 +225,7 @@ const Hero: FC<HeroProps> = ({ content }) => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

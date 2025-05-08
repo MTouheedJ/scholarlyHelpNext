@@ -8,7 +8,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 // import { ColorRing } from "react-loader-spinner";
-import ZohoForm from "./ZohoForm";
+import ZohoForm2 from "./ZohoForm2";
 
 interface Hero3Props {}
 
@@ -104,7 +104,8 @@ const Hero3: FC<Hero3Props> = () => {
               40 Hours
             </span>{" "}
           </p>
-          <ZohoForm nameValue="Last Name" />
+          <ZohoForm2 />
+          {/* <ZohoForm nameValue="Last Name" /> */}
           {/* <form
             onSubmit={handleEmailSubmission}
             className="w-full sm:flex items-center gap-2"

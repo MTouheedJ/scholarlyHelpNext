@@ -8,7 +8,7 @@ import { isEmailValid } from "@/app/utilities/utilities";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
-import ZohoForm from "./ZohoForm";
+import ZohoForm2 from "./ZohoForm2";
 
 interface Hero4Props {}
 
@@ -140,7 +140,9 @@ const Hero4: FC<Hero4Props> = () => {
               </div>
               {emailErr && <p className="text-red-500 text-sm">{emailErr}</p>}
             </form> */}
-            <ZohoForm nameValue="Last Name" />
+            {/* <ZohoForm nameValue="Last Name" /> */}
+            <ZohoForm2 />
+
             <div className="w-[80%] mx-auto bg-[#2B1C50] p-5 rounded-b-lg">
               <div className="flex justify-center items-center mx-auto gap-3">
                 <Image src={yellowEnvalop} alt="" />
