@@ -10,7 +10,14 @@ const AboutUs: FC<AboutUsProps> = ({}) => {
     <div>
       <div className="bg-primary-300 py-16">
         <div className="flex justify-center">
-          <Image src={AboutUsImg} alt="image" className="max-w-80" />
+          <Image
+            src={AboutUsImg}
+            alt="About us image"
+            width={450}
+            height={350}
+            className="max-w-80"
+            priority
+          />
         </div>
         <div className="my-4 ">
           <h1 className="text-center text-5xl font-bold text-primary-500">

@@ -24,6 +24,8 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        sample: "url('/Image/sampleBg.webp')",
+        heroImage: "url('/Image/bgHeroBoyGirl.webp')",
       },
       colors: {
         primary: {

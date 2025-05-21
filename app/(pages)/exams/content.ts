@@ -14,46 +14,48 @@ import Proctored from "@/app/assets/Images/proctored.webp";
 import NonProctored from "@/app/assets/Images/nonProctored.webp";
 
 export const content = {
-  btnText:"Take my online exam",
+  btnText: "Take my Test for me",
+  // btnText: "Place an Order Now",
+  btnTextAP: "Take my Exam",
   heroContent: {
     heading1: "",
-    mainHeading: `Take My Exam: Let’s\nScore Higher Grades\nFor You!`,
+    mainHeading: `Trusted Online Test & Exam Help Services`,
     heading2: "",
     description:
-      "In search to pay someone to take my exam online? We got you covered. Our team of test takers for hire is ready to assist with all kinds of online exam help.",
+      "Need to hire or pay someone to do your online exam? We offer help with online exam and tests. Over 5000+ students have trusted us with their take my exam for me requests, and we’ve helped them achieve A-grades!",
   },
   academic: {
-    mainheading: "We are your Academic Partners!",
+    mainheading: "We Are Your Academic Partners!",
     academicContent: [
       {
         icon: ScheduleIcon,
         title: "Online Class Help",
         description:
-          "Stuck with extensive daily tasks of your online classes, Fret Not, we are here for you to complete your online classes with perfect Grades!",
+          "Are you overwhelmed by the daily tasks of your online classes? Fret not! Scholarly Help is here to assist you in completing your online classes with ease, ensuring you achieve the grades you deserve. If you need someone to manage coursework and also take my online exam for me, we are here to support you every step of the way.",
       },
       {
         icon: Grades,
         title: "Online Exam Help",
         description:
-          "Want to Ace your online exams without taking any stress, Scholarly Help tutors are at your service with Guaranteed best results in your online exams.",
+          "If you want to ace your online exam without the stress, our tutors are ready to assist. Whether you're looking to hire someone to take my exam or need support in completing your exam successfully, we guarantee the best results with Scholarly Help.",
       },
       {
         icon: Write,
         title: "Online Homework Assistance",
         description:
-          "Online homeworks can be very tricky and mind-exhausting at all times, but with Scholarly Help Reliable & Affordable service of online homework assistance everything becomes smooth and easy.",
+          "Online homework can be tricky and time-consuming, but with Scholarly Help’s affordable and reliable homework assistance, everything becomes much easier. So, you can reach out to us not just to do my online exam, but for help with homework too. We make sure your academic workload is manageable.",
       },
       {
         icon: Notes,
         title: "Essay Writing Services",
         description:
-          "Wanting to write a compelling & plagiarism free essay, trust our credible tutors with excellent essay writing services with in due date delivery.",
+          "With our take my exam services, we also offer expert essay writing assistance. Whether you're facing a tough essay deadline or need help crafting a compelling, plagiarism-free essay, Scholarly Help is here to provide top-quality writing services. You can trust us to handle your essays just as we do with your exams, ensuring top-notch results every time.",
       },
       {
         icon: Homework,
         title: "Assignment Help",
         description:
-          "Are you finding it difficult to complete your assignment questions correctly and on time? Worry not, Scholarly Help offers 24/7 homework aid with reliable client support at your service.",
+          "In addition to our do my exam for me services, we also give expert assignment assistance. Whether you’re struggling with tricky assignments or tight deadlines, our team is here to help you complete your work efficiently. If you're wondering, “How can I pay someone to take my online exam and get my assignments done?” — look no further. With our reliable exam help and assignment services, we’ve got your academic needs fully covered.",
       },
       {
         isLast: true,
@@ -62,65 +64,67 @@ export const content = {
     ],
   },
   whyScholarly: {
-    mainHeading: "What Makes You Hire Us",
+    mainHeading: "Choose Us When You Need to Hire Someone to Take My Exam",
+    // mainDescription:
+    //   "Scholarly Help offers plenty of services through skilled <a href='/exams' style='text-decoration: underline; color:#565Add'>exams<a> helpers and various subject experts.",
     mainDescription:
-      "Scholarly Help offers plenty of services through skilled <a href='/exams' style='text-decoration: underline; color:#565Add'>exams<a> helpers and various subject experts.",
+      "Scholarly Help specializes in assisting students who need to pay someone to do their online exam. If you're looking for expert online exam help, our experienced exam test takers are here to provide the support you need to achieve Top Grades.",
     whyScholarlyContent: [
       {
         id: 1,
         icon: "Idea",
-        title: "Expert take my Exam Help Takers",
+        title: "Highly Qualified Online Exam Takers",
         description:
-          "Our skilled professionals are proficient in various subjects, ensuring top-notch performance when you pay someone  to take my online exam.",
+          "Our team consists of highly qualified online exam helpers with experience in taking exams for students across various subjects. You can rely on us to take your exam for you, and we ensure that your exam is completed on time with excellent results.",
       },
       {
         id: 2,
         icon: "Bulb",
         title: "Timely Delivery",
         description:
-          "We understand the importance of deadlines and guarantee on-time completion of your exams, providing peace of mind for you to do my exam. Trust our excellent service “to take my test for me” and achieve guaranteed success.",
+          "We understand how crucial it is to meet deadlines. When you decide to pay someone to do your exam, we guarantee timely completion, ensuring that your exam is submitted on time. If you need someone to do my exam for me or are looking for help to take my test for me, you can count on us to handle the job efficiently and stress-free.",
       },
       {
         id: 3,
         icon: "Content",
         title: "Confidentiality and Privacy",
         description:
-          "We prioritize the security of your information, ensuring strict confidentiality when you trust us to do your exam. ",
+          "Your privacy is extremely important to us. When you trust us to do your online exam, we take all necessary steps to ensure your personal and academic information is kept secure. Whether you pay someone to take your online exam or need expert help with your test, we prioritize confidentiality and security.",
       },
       {
         id: 4,
         icon: "LiveChat",
-        title: "Customized Approach",
+        title: "Urgent Exam Help",
         description:
-          "We tailor our services to meet your specific requirements, ensuring personalized assistance for a successful procedure of “take my exam” experience.",
+          "If you need urgent help with online exams, we are ready to assist. You can call out to us to take my exam for me even on short notice, and we'll ensure the timely and successful completion of your online exam.",
       },
       {
         id: 5,
         icon: "Plagirism",
         title: "Quality Assurance",
         description:
-          "Our commitment to delivering high-quality results sets us apart, ensuring accuracy and excellence in every Online exam help we handle.",
+          "When you hire someone to take your exam, you’re looking for quality, and we deliver just that. Our commitment to providing excellent results means you can expect high-level performance on every exam. Whether you're searching for online exam help or you need someone to do my test for me, we focus on precision and success.",
       },
       {
         id: 6,
         icon: "Money",
         title: "24/7 Support",
         description:
-          "Our dedicated support team is available round the clock to address any queries or concerns, offering reliable assistance with take my online exam help service or do my exam whenever you need it.",
+          "Our customer support is available 24/7 to assist with any questions or concerns. If you ever need help or have inquiries about our take my online exam for me service, our team is always here to assist. We’re dedicated to ensuring that your experience is smooth from start to finish, and that you’re fully supported at every step.",
       },
       {
         id: 7,
         icon: "ConfidentialityIcon",
         title: "Competitive Pricing",
         description:
-          "We offer competitive rates for our do my exam services, providing value for your investment.\n Now you can pay someone to do my exam for me. Use our expert test takers for hire for guaranteed A-grades.",
+          "Quality doesn’t have to come at a high cost. Our services are priced competitively, so you can pay someone to take your online exam without breaking the bank. Our rates provide excellent value for students seeking professional help without compromising quality.",
       },
       {
         id: 8,
         icon: "Grammer",
         title: "Proven Results",
         description:
-          "Our track record of helping students achieve outstanding exam outcomes speaks for itself, making us a trusted choice for take my exam online assistance.\n 24/7 available online test help at your service whenever you need!",
+          "Our success is evident in the many students who have achieved top grades with our help. When you hire someone to take your exam, you’re trusting a proven service with a track record of excellent results. You can rely on our experience to help you succeed academically every time.",
       },
     ],
   },
@@ -273,79 +277,93 @@ export const content = {
       {
         title: "Quizzes",
         desciption:
-          "Short assessments designed to evaluate your understanding of specific topics or concepts.",
+          "Short assessments that help evaluate your understanding of specific topics. If you need assistance, you can trust us to order to take my quiz for me and handle it professionally while you focus on other priorities.",
       },
       {
         title: "Tests",
         desciption:
-          "Comprehensive assessments that cover a broader range of material, usually taken at the end of a unit or course.",
+          "Comprehensive assessments covering a wider range of material. If you’re pressed for time or need support, we’re here to take my test for me, ensuring top-notch results.",
       },
       {
         title: "Lockdown Exams",
         desciption:
-          "Examinations conducted during a period of lockdown or restricted access, often with enhanced security measures in place.",
+          "Exams are conducted with strict security measures. If you're facing a lockdown exam, our team is prepared to take my online exam for me securely and successfully, following all guidelines.",
       },
       {
         title: "Job Assessments",
         desciption:
-          "Evaluations conducted by employers to assess the skills, knowledge, and suitability of candidates for specific job positions.",
+          "Employer-led evaluations to assess candidates' skills. If you're looking for assistance, our test takers can help you with them as well.",
       },
       {
         title: "Entrance Exams",
         desciption:
-          "Examinations required for admission into educational institutions or specialized programs, such as SAT, ACT, GRE, GMAT, or MCAT.",
+          "Exams like the SAT, GRE, or GMAT are essential for college admissions. Need help with entrance exams? We’re here to pay someone to take my online exam and make sure you perform well.",
       },
       {
         title: "Midterm & Final Exams",
         desciption:
-          "Comprehensive assessments administered at the middle halfway through an academic term and end of a course or academic year, covering all material studied.",
+          "Comprehensive assessments given at the middle and end of the term. Need support with your midterm or final exams? Our experts can do my exam for me and ensure you get the grades you deserve.",
       },
     ],
   },
   faqContent: [
     {
       id: 1,
-      question: "Can you take college exams online?",
+      question: "How do I hire someone to take my online exam?",
       answer:
-        "Yes! We can take your college exams online, as an academic service provider Scholarly Help specializes in the deliverance of excellent grades in the college online exams.",
+        "To hire someone to take your online exam, simply provide the details of your exam, and we will assign a qualified expert to complete it on your behalf.",
     },
     {
       id: 2,
-      question: "How do online exams help service work?",
+      question:
+        "How can I ensure the confidentiality and security of my online exam when seeking assistance?",
       answer:
-        "Online exam help service is designed to make the process smooth and convenient for you. Simply reach out to any academic service like Scholarly Help and let them know that you need someone to take your online exam. They will discuss your requirements, provide a tailored solution, and ensure that you receive the necessary support for your online exam help.",
+        "We guarantee that your personal information will not be shared, and your academic integrity will not be compromised while we take your online exam.",
     },
     {
       id: 3,
-      question: "How do I Pay someone to take my online exams for me?",
+      question: "What subjects do you cover for online exam assistance?",
       answer:
-        "How do I Pay someone to take my online exams for me?\n1. Simply go to Academic Service providers like Scholarly Help.\n2. Click on the Chatbot or Whatsapp button to directly talk to their support team.\n3. After getting your details for your exam, you shall be assigned a tutor or a subject expert.\n4. Tutor or a subject expert will attempt your exam and will send you the screenshot for your convenience.\n5. Last step, you shall transfer the decided amount for their services.",
+        "We offer expert assistance for a wide range of subjects, ensuring we can take your online exam in almost any field.",
     },
     {
       id: 4,
-      question:
-        "Can you guarantee a good grade if you Pay someone to take my online exam?",
+      question: "How qualified are the experts who take my online exam for me?",
       answer:
-        "Yes, we can assure you that our team of experts will do their best to help you achieve the highest possible results in your online exam. Our professionals are experienced and knowledgeable in their respective fields, providing you with the necessary guidance and support for your online exams.",
+        "Our exam and test takers are highly qualified, with advanced degrees and years of experience, ensuring they can successfully take your exam for you.",
     },
     {
       id: 5,
-      question:
-        "Is my personal information kept confidential when I ask for online exam help?",
+      question: "Do you offer discounts for first-time clients?",
       answer:
-        'Absolutely! We prioritize the confidentiality and privacy of our clients. When you seek our "online exam help" service to "do your exam" or "take your online exam," we ensure that your personal information and exam details are handled with the utmost care and kept strictly confidential. You can trust us to maintain the highest level of discretion throughout the entire process.',
+        "Yes, we offer discounts for first-time clients, so you can pay to take online exam at a reduced rate.",
     },
     {
       id: 6,
-      question: "How can I trust your online exam help service?",
+      question:
+        "Are there any hidden fees or additional charges for taking my online exam?",
       answer:
-        'Exam help service providers have a long track record of providing reliable and trustworthy "online exam help" to countless students. At Scholarly Help a team of subject experts are dedicated to delivering high-quality assistance and ensuring your satisfaction, when you pay someone to do my exam for you.',
+        "No, there are no hidden fees. The cost for online exam help is clear and transparent, with no surprises.",
     },
     {
       id: 7,
+      question:
+        "Do you offer any guarantees regarding the grade or outcome of the online exam?",
+      answer:
+        "We guarantee an A or B grade when you order to do my online exam. Our experts are dedicated to delivering outstanding results for your online exam, and we ensure you get the best possible outcome.",
+    },
+    {
+      id: 8,
+      question:
+        "Are there any prerequisites or information I need to provide before ordering to do my exam for me?",
+      answer:
+        "When you order to take my online exam for me, simply provide key details like the subject, date, format, and any necessary login credentials or instructions. Once we have the information, we’ll take care of everything.",
+    },
+    {
+      id: 9,
       question: "Is it possible to detect cheating in an online exam?",
       answer:
-        "Yes, it is quite possible to detect cheating in an online exam but as far as the service of Scholarly Help goes, we provide a thorough and clean procedure in attempting these online exams which are proctored or non proctored. Our subject experts have mastered the art of not being able to be detected by the online exam servers.",
+        "When you order to do my exam, rest assured that our subject experts have mastered the art of completing online exams without being detected, ensuring a smooth and secure process.",
     },
   ],
 };

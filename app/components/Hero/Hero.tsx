@@ -93,59 +93,23 @@ const Hero: FC<HeroProps> = ({ content }) => {
       </div>
     );
   }
-  // else if (currentPage === "/do-my-class/") {
-  //   return (
-  //     <div className="bg-primary-300">
-  //       <div
-  //         className="xl:flex justify-center bg-contain bg-no-repeat bg-right-bottom px-10"
-  //         style={{
-  //           backgroundImage: `${
-  //             isMobile ? "none" : `url(${BgHeroBoyGirl.src})`
-  //           }`,
-  //           backgroundSize: "550px",
-  //         }}
-  //       >
-  //         <div className="xl:container xl:px-10">
-  //           <div className={`lg:pt-20 pt-10 lg:pb-4 lg:w-full mb-9`}>
-  //             <div>
-  //               <h1 className="text-primary-500 md:font-bold font-extrabold md:text-5xl text-3xl md:leading-[65px]">
-  //                 {content.mainHeading}
-  //               </h1>
-  //               <div className={`${!isMobile && "max-w-[600px]"} py-5`}>
-  //                 <p className="text-primary-500 md:text-lg">
-  //                   {content.description}
-  //                 </p>
-  //                 <p className="text-primary-500 md:text-lg mt-2">
-  //                   Enter Your Contact Details and We&apos;ll Contact You Within
-  //                   5 Minutes
-  //                 </p>
-  //                 <div>
-  //                   <Step4 />
-  //                 </div>
-  //               </div>
-  //             </div>
-  //           </div>
 
-  //           <div className={`${!isMobile ? "hidden" : "flex justify-center"}`}>
-  //             <Image src={BgHeroBoyGirl} alt="image" />
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
   return (
     <div className={`bg-primary-300 ${currentPage === "/tools" && "mb-20"}`}>
       <div
-        className="xl:flex justify-center bg-contain bg-no-repeat bg-right-bottom px-10"
-        style={{
-          backgroundImage: `${
-            currentPage === "/tools"
-              ? "lg:none"
-              : `${isMobile ? "none" : `url(${BgHeroBoyGirl.src})`}`
-          }`,
-          // backgroundSize: "550px",
-        }}
+        className={`xl:flex justify-center bg-contain bg-no-repeat bg-right-bottom px-10 ${
+          currentPage === "/tools"
+            ? "lg:none"
+            : `${isMobile ? "none" : `bg-heroImage`}`
+        }`}
+        // style={{
+        //   backgroundImage: `${
+        //     currentPage === "/tools"
+        //       ? "lg:none"
+        //       : `${isMobile ? "none" : `url(${BgHeroBoyGirl.src})`}`
+        //   }`,
+        //   // backgroundSize: "550px",
+        // }}
       >
         <div className="xl:container xl:px-10 grid lg:grid-cols-2">
           <div
@@ -192,40 +156,6 @@ const Hero: FC<HeroProps> = ({ content }) => {
                 <div className="sm:w-[70%] w-full">
                   <ZohoForm2 />
                 </div>
-                {/* <div>
-                  {freeQuotephoneEmailMsg ? (
-                    <PhoneEmailMsgFrom />
-                  ) : (
-                    <>
-                      {!freeQuoteForm ? (
-                        <Step4 />
-                      ) : (
-                        <a href="javascript:void(Tawk_API.toggle())">
-                          <Button
-                            type="submit"
-                            className="md:w-[240px] w-[180px] flex justify-evenly md:px-16 px-10"
-                          >
-                            <span className="w-5">
-                              <ChatBubbles />
-                            </span>
-                            Live Chat
-                          </Button>
-                        </a>
-                      )}
-                    </>
-                  )}
-
-                  <div className="w-[80%] mx-auto bg-[#2B1C50] p-5 rounded-b-lg">
-                    <div className="flex justify-center items-center mx-auto gap-3">
-                      <Image src={yellowEnvalop} alt="" />
-                      <p className="text-sm font-semibold text-white">
-                        Check Spam / Junk If You Don’t
-                        <br />
-                        See Our Email Within Minutes
-                      </p>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>

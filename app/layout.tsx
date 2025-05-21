@@ -42,6 +42,7 @@ export default function RootLayout({
         <GoogleTagManager gtmId="GTM-5ZHV46X" />
         <Script
           id="schema-org-main"
+          strategy="beforeInteractive"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: `
@@ -82,6 +83,7 @@ export default function RootLayout({
             ></Script>
             <Script
               id="tawk-conversion"
+              strategy="beforeInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
                   var Tawk_API = Tawk_API || {};
@@ -95,6 +97,7 @@ export default function RootLayout({
             ></Script>
             <Script
               id="tawk-chat-started"
+              strategy="beforeInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
           var Tawk_API = Tawk_API || {};

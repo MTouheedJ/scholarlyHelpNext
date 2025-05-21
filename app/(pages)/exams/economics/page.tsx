@@ -1,4 +1,3 @@
-
 import { FC } from "react";
 import { content } from "./content";
 import Hero from "@/app/components/Hero/Hero";
@@ -17,9 +16,12 @@ import ExamType from "@/app/components/ExamType/ExamType";
 import VariousName from "@/app/components/VariousName/VariousName";
 import dynamic from "next/dynamic";
 
-const WhyScholarly= dynamic(() => import("@/app/components/WhyScholarly/WhyScholarly"), {
-  ssr: false,
-  });
+const WhyScholarly = dynamic(
+  () => import("@/app/components/WhyScholarly/WhyScholarly"),
+  {
+    ssr: false,
+  }
+);
 interface PageProps {}
 const Page: FC<PageProps> = ({}) => {
   // return <div>test</div>
@@ -28,15 +30,32 @@ const Page: FC<PageProps> = ({}) => {
       <Hero content={content.heroContent} />
       <Qualities />
       <SiteReviews />
-      <WhyScholarly header={content.whyScholarly} content={content.whyScholarly.whyScholarlyContent} />
-      <AcademicPartner btnText={content.btnText}  mainHeading={content.academic.mainheading} content={content.academic.academicContent}/>
-      <ExcellenceProof btnText={content.btnText}  content={content.excellenceProofContent} />
+      <WhyScholarly
+        header={content.whyScholarly}
+        content={content.whyScholarly.whyScholarlyContent}
+      />
+      <AcademicPartner
+        btnText={content.btnText}
+        mainHeading={content.academic.mainheading}
+        content={content.academic.academicContent}
+      />
+      <ExcellenceProof
+        btnText={content.btnText}
+        content={content.excellenceProofContent}
+      />
       <Process content={processContent} />
-      <Samples btnText={content.btnText}/>
-      <CustomerReviews btnText={content.btnText}/>
-      <ExamType content={content.examTypeContent}/>
-      <VariousName mainHeading={content.variousNames.mainHeading} content={content.variousNames.variousNamesContent}/>
-      <Subjects btnText={content.btnText} mainHeading={content.subjects.mainHeading} content={content.subjects.subjectsContent}/>
+      <Samples btnText={content.btnText} />
+      <CustomerReviews btnText={content.btnText} />
+      <ExamType content={content.examTypeContent} />
+      <VariousName
+        mainHeading={content.variousNames.mainHeading}
+        content={content.variousNames.variousNamesContent}
+      />
+      <Subjects
+        btnText={content.btnText}
+        mainHeading={content.subjects.mainHeading}
+        content={content.subjects.subjectsContent}
+      />
       <Faq content={content.faqContent} />
     </MainLayout>
   );
@@ -45,7 +64,9 @@ export default Page;
 
 export function generateMetadata({}) {
   return {
-    title: "Take My Online Economics Exam for Me | Economics Quiz Help | Scholarly Help",
-    description: "Scholarly Help provides \"take my online economics exam for me\" services to deliver the utmost economics exam help. Get \"do my economics exam\" help and and take your scores to next level."
+    title:
+      "Take My Online Economics Exam for Me | Economics Quiz Help | Scholarly Help",
+    description:
+      'Scholarly Help provides "take my online economics exam for me" services to deliver the utmost economics exam help. Get "do my economics exam" help and and take your scores to next level.',
   };
 }

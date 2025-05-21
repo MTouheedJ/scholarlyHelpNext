@@ -47,8 +47,8 @@ const VariousName: FC<VariousNameProps> = ({ content, mainHeading }) => {
         </div>
         <div className="flex justify-center mt-8">
           <a href="javascript:void(Tawk_API.toggle())">
-            <Button className="md:w-64 w-48 bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
-              Place an Order Now
+            <Button className="bg-secondary-500 hover:text-secondary-500 hover:border-secondary-500">
+              Pay Someone To Do My Online Exam
             </Button>
           </a>
         </div>
