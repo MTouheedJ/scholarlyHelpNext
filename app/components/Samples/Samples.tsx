@@ -1,7 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
-import Image from "next/image";
+import { FC } from "react";
 import Button from "../Button/Button";
 import useBreakpoint from "@/app/(pages)/hooks/useMediabreakpoint";
 import Slider from "react-slick";
@@ -13,15 +12,8 @@ import SampleBg from "@/app/assets/Images/sampleBg.webp";
 import { sampleCardContent } from "./content";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// type Content = {
-//   icon?: any;
-//   title?: string;
-//   description?: string;
-//   isLast?: boolean;
-// };
 
 interface SamplesProps {
-  // content: Content[];
   btnText?: string;
 }
 const Samples: FC<SamplesProps> = ({ btnText }) => {
@@ -34,15 +26,6 @@ const Samples: FC<SamplesProps> = ({ btnText }) => {
     slidesToShow: 3,
     dots: false,
     responsive: [
-      // {
-      //   breakpoint: 1100,
-      //   settings: {
-      //     slidesToShow: 2,
-      //     slidesToScroll: 2,
-      //     infinite: true,
-      //     dots: true,
-      //   },
-      // },
       {
         breakpoint: 992,
         settings: {
@@ -69,8 +52,8 @@ const Samples: FC<SamplesProps> = ({ btnText }) => {
 
   return (
     <div
-      className="py-28 relative bg-primary-500 xl:flex justify-center"
-      style={{ backgroundImage: `url(${SampleBg.src})` }}
+      className="py-28 relative bg-primary-500 xl:flex justify-center bg-sample"
+      // style={{ backgroundImage: `url(${SampleBg.src})` }}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-primary-500 opacity-90"></div>
       <div className="xl:container 2xl:px-10 z-10 relative xl:px-5 samplesWrap">

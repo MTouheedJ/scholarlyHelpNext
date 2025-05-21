@@ -35,7 +35,7 @@ const Page: FC<PageProps> = ({}) => {
         content={content.whyScholarly.whyScholarlyContent}
       />
       <AcademicPartner
-        btnText={content.btnText}
+        btnText={content.btnTextAP}
         mainHeading={content.academic.mainheading}
         content={content.academic.academicContent}
       />
@@ -64,8 +64,8 @@ export default Page;
 
 export function generateMetadata({}) {
   return {
-    title: "Pay Someone to Take My Online Exam | Hire Exam Help & Test Takers",
+    title: "Take My Exam for Me | Pay Someone to Do My Test Online | Exam Help",
     description:
-      "Get professional exam help now! Pay someone to do your online exam for you. Hire expert exam takers for secure, reliable, and affordable services. Take my exam or test for me today—stress-free solutions that guarantee results.",
+      "Need help with your exam? Hire trusted experts to take your exam or do your test online—secure, private, and available 24/7 for guaranteed results",
   };
 }

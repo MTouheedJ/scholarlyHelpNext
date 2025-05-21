@@ -24,7 +24,15 @@ const SiteReviews: FC<SiteReviewsProps> = ({}) => {
           } col-span-1 `}
         >
           <div className="md:w-14 w-10 mr-3">
-            <Image src={SiteJabber} alt="SiteJabber" />
+            <Image
+              src={SiteJabber}
+              alt="SiteJabber"
+              width={56}
+              height={56}
+              placeholder="blur"
+              quality={70}
+              priority={false}
+            />
           </div>
           <div>
             <div>
@@ -94,7 +102,15 @@ const SiteReviews: FC<SiteReviewsProps> = ({}) => {
           } col-span-1 `}
         >
           <div className="md:w-14 w-10 mr-3">
-            <Image src={Trustpilot} alt="Trustpilot" />
+            <Image
+              src={Trustpilot}
+              alt="Trustpilot"
+              width={56}
+              height={56}
+              placeholder="blur"
+              quality={70}
+              priority={false}
+            />
           </div>
           <div>
             <div>
@@ -129,7 +145,15 @@ const SiteReviews: FC<SiteReviewsProps> = ({}) => {
           } col-span-1 `}
         >
           <div className="md:w-14 w-10 mr-3">
-            <Image src={ReviewIo} alt="ReviewIo" />
+            <Image
+              src={ReviewIo}
+              alt="ReviewIo"
+              width={56}
+              height={56}
+              placeholder="blur"
+              quality={70}
+              priority={false}
+            />
           </div>
           <div>
             <div>
